@@ -14,14 +14,11 @@ export default function Card({result}: any) {
 
         </figure>
         <div className="p-5">
-            <h2>
-            {result.title}
-            <div >{result.vote_average}</div>
-            </h2>
-            <p>{result.overview}</p>
+            <p>{result.title}</p>
+            <div>{result.vote_average}</div>
             <div>
-            <div>Fashion</div> 
-            <div>Products</div>
+                <div>Fashion</div> 
+                <div>Products</div>
             </div>
         </div>
     </div>

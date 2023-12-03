@@ -8,29 +8,24 @@ export const User = async () => {
         return <p>No user</p>
     }
     return (
-        <div>
-            <div className="w-96 bg-base-100 shadow-xl">
-                <div>
-                    <div>
-                        <div className="w-24">
-                        <Image
-                            src={session.user.image}
-                            width={50}
-                            height={50}
-                            alt="avatar"
-                            className="rounded-full"
-                        />
-                        </div>
-                    </div>
-                    <h2>{session.user.name}</h2>
-                    <p>{session.user.email}</p>
-                    <p>{session.user.id}</p>
-                    <div className="justify-end">
-                    <LogoutButton />
-                    </div>
-                </div>
+        <>
+         <div className="">
+            <Image
+                src={session.user.image}
+                width={50}
+                height={50}
+                alt="avatar"
+                className="rounded-full"
+            />
+            <div className='absolute p-5 right-0'>
+                <p className='text-sm font-medium text-slate-900'>{session.user.name}</p>
+                <p className='text-sm text-slate-500'>{session.user.email}</p>
+                <p className='text-sm text-slate-500'>{session.user.id}</p>
+                <LogoutButton />
             </div>
-        </div>
-        
+            
+            
+        </div>   
+        </>
     )
 }

@@ -1,14 +1,14 @@
 import { SWRProvider } from '@/app/swr-provider'
 import PopularMovies  from '@/app/ui/PopularMovies';
+import TitleSecond from './ui/TitleSecond';
+import Title from './ui/Title';
 
 export default async function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>🔥 Welcome on Netflix clone</h1>
-      
-      <SWRProvider>
+    <main className="pt-5">
+        <Title>🔥 Welcome on Netflix clone</Title>
+        <TitleSecond>Popular</TitleSecond>
         <PopularMovies />
-      </SWRProvider>
     </main>
   )
 }

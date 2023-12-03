@@ -7,7 +7,7 @@ export const LogoutButton = () => {
         onClick={async () => {
             await signOut()
         }}
-        className='btn btn-primary'
+        className='btn mt-4'
     >Logout</button>
   )
 }

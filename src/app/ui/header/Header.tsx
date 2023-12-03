@@ -3,7 +3,7 @@ import MainNav from "./MainNav";
 
 export default function Header() {
   return (
-    <header>
+    <header className="flex justify-between items-center px-1 bg-white shadow-sm">
         <MainNav />
         <AccountSection />
     </header>
