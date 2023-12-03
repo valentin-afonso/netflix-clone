@@ -1,5 +1,6 @@
 import { LogoutButton } from './LogoutButton';
 import { getRequiredAuthSession } from '@/lib/auth';
+import Image from 'next/image'
 
 export const User = async () => {
     const session = await getRequiredAuthSession()
@@ -8,17 +9,23 @@ export const User = async () => {
     }
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
-                <div className="card-body">
-                    <div className="avatar">
-                        <div className="w-24 rounded-full">
-                            <img src={session.user.image} alt="avatar" />
+            <div className="w-96 bg-base-100 shadow-xl">
+                <div>
+                    <div>
+                        <div className="w-24">
+                        <Image
+                            src={session.user.image}
+                            width={50}
+                            height={50}
+                            alt="avatar"
+                            className="rounded-full"
+                        />
                         </div>
                     </div>
-                    <h2 className="card-title">{session.user.name}</h2>
+                    <h2>{session.user.name}</h2>
                     <p>{session.user.email}</p>
                     <p>{session.user.id}</p>
-                    <div className="card-actions justify-end">
+                    <div className="justify-end">
                     <LogoutButton />
                     </div>
                 </div>
