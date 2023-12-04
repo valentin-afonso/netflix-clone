@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from './ui/header/Header'
+import { getAuthSession } from "@/lib/auth";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,11 +16,13 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  
+  const session = await getAuthSession()
   return (
     <html lang="en" className='h-full bg-gray-light'>
       <body className={`${inter.className} h-full`}>
-        <Header />
+        { session &&
+          <Header />
+        }
         <div>
           {children}
         </div>
