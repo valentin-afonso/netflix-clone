@@ -1,8 +1,5 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { LoginButton } from "@/app/ui/auth/LoginButton";
-import { User } from "@/app/ui/auth/User";
-import { getAuthSession } from "@/lib/auth";
 import './globals.css'
 import Header from './ui/header/Header'
 
@@ -18,31 +15,14 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-
   
-  const session = await getAuthSession()
-  /*
-  if (!session) {
-    return {
-      redirect: {
-        destination: '/login',
-        permanent: false,
-      },
-    }
-  }
-  */
   return (
     <html lang="en" className='h-full bg-gray-light'>
-      <body className={inter.className}>
+      <body className={`${inter.className} h-full`}>
         <Header />
-        {session ? (
-            <div className='px-5'>
-              {children}
-            </div>
-        ) : (
-            <div></div>
-        )}
-
+        <div>
+          {children}
+        </div>
       </body>
     </html>
   )

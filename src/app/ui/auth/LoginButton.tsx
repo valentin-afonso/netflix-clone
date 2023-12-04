@@ -8,6 +8,6 @@ export const LoginButton = () => {
             await signIn()
         }}
         className='btn btn-primary'
-    >Login</button>
+    >Github</button>
   )
 }
