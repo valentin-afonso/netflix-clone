@@ -9,8 +9,23 @@ export default function Results({results}: any) {
   return (
     <div>
         <Swiper
-        spaceBetween={20}
-        slidesPerView={5}
+        spaceBetween={5}
+        slidesPerView={2}
+        breakpoints={{
+          500: {
+            slidesPerView: 3,
+          },
+          768: {
+            slidesPerView: 4,
+          },
+          1084: {
+            slidesPerView: 5,
+          },
+          // when window width is >= 1355px
+          1355: {
+            slidesPerView: 6,
+          },
+        }}
         className="w-full"
       > 
         {

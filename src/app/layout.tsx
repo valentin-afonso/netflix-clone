@@ -18,8 +18,8 @@ export default async function RootLayout({
 }) {
   const session = await getAuthSession()
   return (
-    <html lang="en" className='h-full bg-gray-light'>
-      <body className={`${inter.className} h-full`}>
+    <html lang="en" className='h-full bg-gray-dark w-screen overflow-x-hidden text-white'>
+      <body className={`${inter.className} h-full `}>
         { session &&
           <Header />
         }

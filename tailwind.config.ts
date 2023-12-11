@@ -15,15 +15,17 @@ const config: Config = {
       xl: '1440px',
     },
     colors: {
-      'white': '#ffffff',
+      'white': '#F5F5F1',
       'blue': '#1fb6ff',
       'pink': '#ff49db',
       'orange': '#ff7849',
       'green': '#13ce66',
-      'gray-dark': '#273444',
       'gray': '#8492a6',
       'gray-light': 'rgb(249, 250, 251)',
       'black': '#292929',
+      'red': '#e50914',
+      'gray-dark': '#221F1F',
+      'header': 'rgb(20, 20, 20);'
     },
     boxShadow: {
       sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
