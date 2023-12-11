@@ -15,8 +15,11 @@ export default async function Home() {
   return (
     <main className="pt-5">
         <Title>🔥 Welcome on Netflix clone</Title>
-        <TitleSecond>Popular</TitleSecond>
-        <PopularMovies />
+        <section className='pl-20'>
+          <TitleSecond>Popular</TitleSecond>
+          <PopularMovies />  
+        </section>
+         
     </main>
   )
 }

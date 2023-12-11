@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function Card({result}: any) {
     //backdrop_path || poster_path
   return (
-    <div className="card w-96 bg-base-100 shadow-xl rounded overflow-hidden">
+    <div className="card bg-base-100 shadow-xl rounded overflow-hidden">
         <figure>
             <Image
                 src={`https://image.tmdb.org/t/p/w500${result.backdrop_path}`}

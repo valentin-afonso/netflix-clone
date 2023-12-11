@@ -13,4 +13,12 @@
       padding-right: theme('spacing.2');
       box-shadow: theme('boxShadow.md');
     }
+    .card {
+      width: inherit;
+    }
+}
+
+.swiper-wrapper {
+  display: flex;
+  width: 100%;
 }
