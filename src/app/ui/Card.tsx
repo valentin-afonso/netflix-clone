@@ -13,7 +13,7 @@ export default function Card({result}: any) {
             />
 
         </figure>
-        <div className="p-5">
+        <div className="p-5 hidden">
             <p>{result.title}</p>
             <div>{result.vote_average}</div>
             <div>

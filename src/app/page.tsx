@@ -13,7 +13,7 @@ export default async function Home() {
   }
 
   return (
-    <main className="pt-5">
+    <main className="pt-20">
         <Title>🔥 Welcome on Netflix clone</Title>
         <section className='pl-20'>
           <TitleSecond>Popular</TitleSecond>
