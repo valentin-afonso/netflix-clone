@@ -24,7 +24,6 @@ export default function Results({results}: any) {
           1084: {
             slidesPerView: 5,
           },
-          // when window width is >= 1355px
           1355: {
             slidesPerView: 6,
           },

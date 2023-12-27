@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from './ui/header/Header'
+import Slidebar from './ui/sidebar/Sidebar'
 import { getAuthSession } from "@/lib/auth";
 
 const inter = Inter({ subsets: ['latin'] })
@@ -22,6 +23,9 @@ export default async function RootLayout({
       <body className={`${inter.className} h-full `}>
         { session &&
           <Header />
+        }
+         { session &&
+          <Slidebar />
         }
         <div>
           {children}
