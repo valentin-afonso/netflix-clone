@@ -17,8 +17,80 @@
       width: inherit;
     }
 }
-
+img {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.swiper {
+  position: relative;
+}
 .swiper-wrapper {
   display: flex;
   width: 100%;
+}
+
+.swiper-button-prev {
+  left: -5rem;
+}
+.swiper-button-next {
+  right: 0;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  width: 4rem;
+  height: 100%;
+  opacity: 0;
+}
+.swiper-button-prev::before,
+.swiper-button-next::before {
+  filter: invert(1);
+  width: 4rem;
+  height: 4rem;
+  display: block;
+  z-index: 1;
+}
+
+.swiper-button-prev::before {
+  content: "";
+  background: url('/chevron-left.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.swiper-button-next::before {
+  content: "";
+  background: url('/chevron-right.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.swiper-button-prev::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right,rgba(20,20,20,.6) 50%, rgba(20,20,20,0) 100%);
+}
+.swiper-button-next::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left,rgba(20,20,20,.6) 50%, rgba(20,20,20,0) 100%);
+}
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next  {
+  opacity: 1;
+}
+.swiper-button-disabled {
+  opacity: 0 !important;
 }

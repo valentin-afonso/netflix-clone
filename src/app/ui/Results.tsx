@@ -3,6 +3,7 @@
 import Card from "./Card"
 import { register } from 'swiper/element/bundle';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
 
 export default function Results({results}: any) {
   register();
@@ -11,6 +12,8 @@ export default function Results({results}: any) {
         <Swiper
         spaceBetween={5}
         slidesPerView={2}
+        navigation={true} 
+        modules={[Navigation]} 
         breakpoints={{
           500: {
             slidesPerView: 3,
