@@ -94,3 +94,8 @@ img {
 .swiper-button-disabled {
   opacity: 0 !important;
 }
+
+.rating_text {
+  text-shadow: 2px 0 theme('colors.black'), -2px 0 theme('colors.black'), 0 2px theme('colors.black'), 0 -2px theme('colors.black'),
+             1px 1px theme('colors.black'), -1px -1px theme('colors.black'), 1px -1px theme('colors.black'), -1px 1px theme('colors.black');
+}
