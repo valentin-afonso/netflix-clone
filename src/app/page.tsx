@@ -30,7 +30,7 @@ export default async function Home() {
           <TitleSecond>Now playing</TitleSecond>
           <NowPlayingMovies />  
         </section>
-        <section className='pl-20'>
+        <section className='pl-20 mb-10'>
           <TitleSecond>Upcoming</TitleSecond>
           <UpcomingMovies />  
         </section>

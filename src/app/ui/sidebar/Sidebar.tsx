@@ -1,4 +1,4 @@
-import Close from '@/app/ui/svg/close'
+import Close from '@/app/ui/svg/Close'
 
 export default function Sidebar() {
   return (
