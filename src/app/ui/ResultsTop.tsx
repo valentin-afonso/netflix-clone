@@ -34,7 +34,7 @@ export default function ResultsTop({results}: any) {
             results.map((result: any, index: number) => {
                 return(
                   <SwiperSlide key={result.id}>
-                    <div className="relative w-full h-40 flex">
+                    <div className="relative w-full flex">
                         <div className="absolute left-0">
                             <p className="rating_text text-9xl text-gray-dark ">{index + 1}</p>
                         </div>

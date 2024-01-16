@@ -22,7 +22,7 @@ export default async function Home() {
           <TitleSecond>Popular</TitleSecond>
           <PopularMovies />  
         </section>
-        <section className='pl-20 mb-10'>
+        <section className='pl-36 mb-10'>
           <TitleSecond>Top rated</TitleSecond>
           <TopRatedMovies />  
         </section>
