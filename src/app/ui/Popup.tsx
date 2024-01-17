@@ -1,12 +1,13 @@
 import Image from 'next/image'
+import Close from '@/app/ui/svg/Close'
 
 export default function Popup({result, setSelectedId}: any) {
 
   return (
     <>
       <div className="relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-black before:to-transparent">
-        <div className='absolute top-1 right-1 cursor-pointer'>
-          <p onClick={() => setSelectedId(null)}>close</p>
+        <div className='absolute flex items-center justify-center w-8 h-8 bg-black rounded-full top-1 right-1 cursor-pointer' onClick={() => setSelectedId(null)}>
+          <Close />
         </div>
         <Image
               src={`https://image.tmdb.org/t/p/w500${result.backdrop_path}`}
