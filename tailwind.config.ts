@@ -53,6 +53,9 @@ const config: Config = {
       },
       borderRadius: {
         's': '9px',
+      },
+      width: {
+        '140': '40rem',
       }
     },
   },

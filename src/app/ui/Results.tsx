@@ -1,6 +1,5 @@
 'use client'
 
-
 import Card from "./Card"
 import { register } from 'swiper/element/bundle';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -36,13 +35,14 @@ export default function Results({results}: any) {
             results.map((result: any) => {
                 return(
                   <SwiperSlide key={result.id}>
-                    <Card result={result} />
+                    <Card 
+                      result={result}  
+                    />
                   </SwiperSlide>
                 )
             })
         }
         </Swiper>
-
     </div>
   )
 }

@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import Popup from './Popup'
 
 export default function Card({result}: any) {
-    const [selectedId, setSelectedId] = useState(null)
+    const [selectedId, setSelectedId,] = useState(null)
     //backdrop_path || poster_path
     // result.id
   return (
@@ -34,7 +34,7 @@ export default function Card({result}: any) {
             initial={{ opacity: 0, scale: 0, y: '-50%',  x: '-50%' }}
             animate={{ opacity: 1, scale: 1,  y: '-50%', x: '-50%' }}
             exit={{ opacity: 0, scale: 0,  y: '-50%', x: '-50%'}}
-            className='fixed top-1/2 left-1/2 z-50'
+            className='fixed top-1/2 left-1/2 z-50 w-140'
           >
             <Popup result={result} setSelectedId={setSelectedId} />
           </motion.div>
