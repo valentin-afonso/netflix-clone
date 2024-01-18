@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Close from '@/app/ui/svg/Close'
 
 export default function Popup({result, setSelectedId}: any) {
-
+  // const { base64 } = await getBlurData(`https://image.tmdb.org/t/p/w500${result.backdrop_path}`);
   return (
     <>
       <div className="relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-black before:to-transparent">
