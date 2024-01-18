@@ -20,12 +20,14 @@ const config: Config = {
       'pink': '#ff49db',
       'orange': '#ff7849',
       'green': '#13ce66',
-      'gray': '#8492a6',
+      'gray': 'rgb(89, 89, 89);',
       'gray-light': 'rgb(249, 250, 251)',
-      'black': '#292929',
+      'black': 'black',
+      'dark': '#141414',
+      'dark-light': '#181818',
       'red': '#e50914',
       'gray-dark': '#221F1F',
-      'header': 'rgb(20, 20, 20);'
+      'header': '#141414db'
     },
     boxShadow: {
       sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',

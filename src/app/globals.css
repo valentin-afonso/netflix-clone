@@ -96,7 +96,6 @@ img {
 }
 
 .rating_text {
-  text-shadow: 2px 0 theme('colors.black'), -2px 0 theme('colors.black'), 0 2px theme('colors.black'), 0 -2px theme('colors.black'),
-             1px 1px theme('colors.black'), -1px -1px theme('colors.black'), 1px -1px theme('colors.black'), -1px 1px theme('colors.black');
   transform: translateX(-62px);
+  -webkit-text-stroke: 4px theme('colors.gray');
 }

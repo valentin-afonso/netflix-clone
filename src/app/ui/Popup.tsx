@@ -5,7 +5,7 @@ export default function Popup({result, setSelectedId}: any) {
   // const { base64 } = await getBlurData(`https://image.tmdb.org/t/p/w500${result.backdrop_path}`);
   return (
     <>
-      <div className="relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-black before:to-transparent">
+      <div className="relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-dark-light before:to-transparent">
         <div className='absolute flex items-center justify-center w-8 h-8 bg-black rounded-full top-1 right-1 cursor-pointer' onClick={() => setSelectedId(null)}>
           <Close />
         </div>
@@ -18,7 +18,7 @@ export default function Popup({result, setSelectedId}: any) {
           />
           <p className='absolute w-full bottom-1 left-1 text-xl'>{result.title}</p>
       </div>
-      <div className='bg-black p-4'>
+      <div className='bg-dark-light p-4'>
         <p>
           <span>{result.vote_average}/10</span>
           <span className='text-sm'> ({result.vote_count} votes)</span>

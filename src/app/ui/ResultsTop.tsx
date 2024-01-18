@@ -36,7 +36,7 @@ export default function ResultsTop({results}: any) {
                   <SwiperSlide key={result.id}>
                     <div className="relative w-full flex">
                         <div className="absolute left-0">
-                            <p className="rating_text text-9xl text-gray-dark ">{index + 1}</p>
+                            <p className="rating_text text-9xl text-black ">{index + 1}</p>
                         </div>
                         <CardTop result={result} />
                     </div>

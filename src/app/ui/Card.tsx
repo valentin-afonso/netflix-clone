@@ -34,7 +34,7 @@ export default function Card({result}: any) {
             initial={{ opacity: 0, scale: 0, y: '-50%',  x: '-50%' }}
             animate={{ opacity: 1, scale: 1,  y: '-50%', x: '-50%' }}
             exit={{ opacity: 0, scale: 0,  y: '-50%', x: '-50%'}}
-            className='fixed top-1/2 left-1/2 z-50 w-140'
+            className='popup fixed top-1/2 left-1/2 z-50 w-140'
           >
             <Popup result={result} setSelectedId={setSelectedId} />
           </motion.div>
@@ -46,7 +46,7 @@ export default function Card({result}: any) {
             initial={{ opacity: 0}}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0}}
-            className='fixed top-0 left-0 w-full h-full z-20 bg-black/[.8]'
+            className='fixed top-0 left-0 w-full h-full z-20 bg-dark/[.8]'
             onClick={() => setSelectedId(null)}
           >
           </motion.div>
