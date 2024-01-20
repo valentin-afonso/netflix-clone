@@ -17,7 +17,7 @@
       width: inherit;
     }
 }
-img {
+img, h1, h2, h3, p, a, button {
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -97,6 +97,6 @@ img {
 }
 
 .rating_text {
-  transform: translateX(-62px);
+  transform: translate(-62px, 62px);
   -webkit-text-stroke: 4px theme('colors.gray');
 }

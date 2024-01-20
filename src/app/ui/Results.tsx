@@ -50,7 +50,6 @@ export default function Results({results}: any) {
             })
         }
         </Swiper>
-
         <AnimatePresence>
         {selectedId && (
           <motion.div
@@ -69,7 +68,7 @@ export default function Results({results}: any) {
             initial={{ opacity: 0}}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0}}
-            className='fixed top-0 left-0 w-full h-full z-20 bg-dark/[.8]'
+            className='fixed top-0 left-0 w-full h-full z-20 bg-black/[.8]'
             onClick={() => setSelectedId(null)}
           >
           </motion.div>
