@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from './ui/header/Header'
+import Footer from '@/app/ui/footer/Footer'
 import Slidebar from './ui/sidebar/Sidebar'
 import { getAuthSession } from "@/lib/auth";
 
@@ -30,6 +31,9 @@ export default async function RootLayout({
         <div>
           {children}
         </div>
+        { session &&
+          <Footer />
+        }
       </body>
     </html>
   )

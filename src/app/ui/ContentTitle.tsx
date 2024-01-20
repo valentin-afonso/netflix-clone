@@ -13,8 +13,8 @@ export default function ContentTitle() {
             alt="cover"
             className='w-56'
         />
-        <Title>Welcome on my Netflix clone 🔥</Title>
-        <p className='mt-3 mb-1 max-w-lg'>Movie lover? This app is designed for you! Find your favorite films, discover the latest releases, or keep an eye on upcoming movies.</p>
+        <Title>Welcome on my Netflix app</Title>
+        <p className='mt-3 mb-3 max-w-lg'>Movie lover? This app is designed for you! Find your favorite films, discover the latest releases, or keep an eye on upcoming movies.</p>
         <Button>More information</Button>
     </div>
   )
