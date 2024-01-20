@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from './ui/header/Header'
 import Footer from '@/app/ui/footer/Footer'
-import Slidebar from './ui/sidebar/Sidebar'
 import { getAuthSession } from "@/lib/auth";
 
 const inter = Inter({ subsets: ['latin'] })
@@ -25,12 +24,9 @@ export default async function RootLayout({
         { session &&
           <Header />
         }
-         { session &&
-          <Slidebar />
-        }
-        <div>
+        <>
           {children}
-        </div>
+        </>
         { session &&
           <Footer />
         }

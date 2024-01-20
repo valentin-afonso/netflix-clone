@@ -18,7 +18,6 @@ export default async function Home() {
 
   return (
     <main>
-        
         <section className='h-screen mb-10'>
           <SliderHome />
         </section>
