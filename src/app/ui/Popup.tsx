@@ -2,6 +2,10 @@ import Image from 'next/image'
 import Close from '@/app/ui/svg/Close'
 
 export default function Popup({result, setSelectedId}: any) {
+  let img_path = `https://image.tmdb.org/t/p/w500${result.backdrop_path}`
+  if (result.id === 1) {
+    img_path = '/img-blade-runner-1.webp'
+  }
   // const { base64 } = await getBlurData(`https://image.tmdb.org/t/p/w500${result.backdrop_path}`);
   return (
     <>
@@ -10,7 +14,7 @@ export default function Popup({result, setSelectedId}: any) {
           <Close />
         </div>
         <Image
-              src={`https://image.tmdb.org/t/p/w500${result.backdrop_path}`}
+              src={img_path}
               width={720}
               height={405}
               alt="Picture of the author"
