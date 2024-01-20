@@ -12,8 +12,8 @@ export default async function NowPlayingMovies() {
     const results = data.results
 
   return (
-    <div>
+    <>
         <Results results={results} />
-    </div>
+    </>
   )
 }

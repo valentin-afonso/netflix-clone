@@ -26,6 +26,7 @@ img {
 }
 .swiper {
   position: relative;
+  overflow: visible !important;
 }
 .swiper-wrapper {
   display: flex;

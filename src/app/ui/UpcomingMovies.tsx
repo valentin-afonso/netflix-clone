@@ -11,8 +11,8 @@ export default async function UpcomingMovies() {
     const data = await res.json()
     const results = data.results
   return (
-    <div>
+    <>
         <Results results={results} />
-    </div>
+    </>
   )
 }

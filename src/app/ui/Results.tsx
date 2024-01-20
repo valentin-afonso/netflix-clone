@@ -9,7 +9,7 @@ export default function Results({results}: any) {
   register();
 
   return (
-    <div>
+    <>
         <Swiper
         spaceBetween={5}
         slidesPerView={2}
@@ -29,7 +29,7 @@ export default function Results({results}: any) {
             slidesPerView: 6,
           },
         }}
-        className="w-full"
+        className="overflow-visible w-full max-h-slide"
       > 
         {
             results.map((result: any) => {
@@ -43,6 +43,6 @@ export default function Results({results}: any) {
             })
         }
         </Swiper>
-    </div>
+    </>
   )
 }

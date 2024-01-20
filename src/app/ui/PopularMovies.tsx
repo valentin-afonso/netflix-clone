@@ -18,8 +18,8 @@ export default async function PopularMovies() {
     // const { movies, isLoading, error, mutate } = usePopularMovies();
 
     return (
-        <div>
+        <>
            <Results results={results} />
-        </div>
+        </>
     )
 }

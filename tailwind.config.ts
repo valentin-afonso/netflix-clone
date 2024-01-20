@@ -16,9 +16,6 @@ const config: Config = {
     },
     colors: {
       'white': '#F5F5F1',
-      'blue': '#1fb6ff',
-      'pink': '#ff49db',
-      'orange': '#ff7849',
       'green': '#13ce66',
       'gray': 'rgb(89, 89, 89);',
       'gray-light': 'rgb(249, 250, 251)',
@@ -27,7 +24,9 @@ const config: Config = {
       'dark-light': '#181818',
       'red': '#e50914',
       'gray-dark': '#221F1F',
-      'header': '#141414db'
+      'header': '#141414db',
+      'btn-secondary': 'rgba(109, 109, 110, 0.7)',
+      'btn-secondary-hover': 'rgba(109, 109, 110, 0.4)'
     },
     boxShadow: {
       sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
@@ -58,6 +57,12 @@ const config: Config = {
       },
       width: {
         '140': '40rem',
+      },
+      height: {
+        'slide': '124px',
+      },
+      maxHeight: {
+        'slide': '164px',
       }
     },
   },

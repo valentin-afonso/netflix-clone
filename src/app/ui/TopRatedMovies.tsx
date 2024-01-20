@@ -12,8 +12,8 @@ export default async function TopRatedMovies() {
     const results = data.results
     const movies = results.slice(0, 10);
   return (
-    <div>
+    <>
         <ResultsTop results={movies} />
-    </div>
+    </>
   )
 }

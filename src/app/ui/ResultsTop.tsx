@@ -8,7 +8,7 @@ import { Navigation } from 'swiper/modules';
 export default function ResultsTop({results}: any) {
     register();
   return (
-    <div>
+    <>
         <Swiper
         spaceBetween={80}
         slidesPerView={2}
@@ -46,6 +46,6 @@ export default function ResultsTop({results}: any) {
             })
         }
         </Swiper>
-    </div>
+    </>
   )
 }
