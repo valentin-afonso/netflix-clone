@@ -1,13 +1,15 @@
-'use client'
-import {signIn} from 'next-auth/react'
+"use client";
+import { signIn } from "next-auth/react";
 
 export const LoginButton = () => {
   return (
     <button
-        onClick={async () => {
-            await signIn()
-        }}
-        className='btn btn-primary'
-    >Github</button>
-  )
-}
+      onClick={async () => {
+        await signIn();
+      }}
+      className="btn btn-primary"
+    >
+      Github
+    </button>
+  );
+};
