@@ -31,7 +31,7 @@ export default function Button({ children }: { children: React.ReactNode }) {
             initial={{ opacity: 0, scale: 0, y: "-50%", x: "-50%" }}
             animate={{ opacity: 1, scale: 1, y: "-50%", x: "-50%" }}
             exit={{ opacity: 0, scale: 0, y: "-50%", x: "-50%" }}
-            className="popup fixed top-1/2 left-1/2 z-50 w-140"
+            className="popup fixed top-1/2 left-1/2 w-140"
           >
             <Popup result={result} setSelectedId={setSelectedId} />
           </motion.div>

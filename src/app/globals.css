@@ -148,6 +148,7 @@ section.section_rating
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  z-index: 999;
 }
 .popup::-webkit-scrollbar {
   display: none;

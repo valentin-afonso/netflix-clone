@@ -18,7 +18,7 @@ export default function SliderHome() {
         autoplay={{ delay: 8000 }}
         modules={[EffectFade, Autoplay]}
         effect="fade"
-        className="w-full h-full relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-2/6 before:bg-gradient-to-t before:from-dark before:to-transparent before:z-10"
+        className="w-full h-full relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-2/6 before:bg-gradient-to-t before:from-dark before:to-transparent before:z-2"
       >
         <SwiperSlide>
           <Image

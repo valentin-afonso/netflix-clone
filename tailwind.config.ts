@@ -66,6 +66,10 @@ const config: Config = {
       maxHeight: {
         slide: "164px",
       },
+      zIndex: {
+        "1": "1",
+        "2": "2",
+      },
     },
   },
   plugins: [],
