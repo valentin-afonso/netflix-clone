@@ -38,7 +38,7 @@ export default function Results({ results }: any) {
       >
         {results.map((result: any) => {
           return (
-            <SwiperSlide key={result.id}>
+            <SwiperSlide key={result.id} className="max-h-slide">
               <Card
                 result={result}
                 setSelectedId={setSelectedId}

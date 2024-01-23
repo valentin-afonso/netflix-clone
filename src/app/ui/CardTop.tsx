@@ -9,7 +9,7 @@ export default function CardTop({ result }: any) {
           width={500}
           height={500}
           alt="Picture of the author"
-          className="relative w-40 max-w-none z-10 shadow-xl rounded"
+          className="relative w-40 max-w-none z-10 shadow-xl rounded transition-all duration-500"
         />
       </figure>
       <div className="p-5 hidden">

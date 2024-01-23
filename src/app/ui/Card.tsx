@@ -21,7 +21,7 @@ export default function Card({ result, setSelectedId, setSelectedMovie }: any) {
             width={500}
             height={500}
             alt="Picture of the author"
-            className="group-hover:brightness-50 group-hover:scale-125 transition-all duration-500"
+            className="group-hover:brightness-50 group-hover:scale-125 transition-all duration-500 max-h-slide"
           />
         </figure>
         <div className="absolute bottom-0 px-1 py-1 w-full hidden group-hover:block">

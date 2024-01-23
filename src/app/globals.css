@@ -34,6 +34,40 @@ button {
   position: relative;
   overflow: visible !important;
 }
+section:not(.section_slider):not(.section_rating)
+  .swiper:not(.swiper-initialized)
+  .swiper-wrapper
+  .swiper-slide {
+  margin-right: 5px;
+  width: 300px;
+  height: 169px;
+}
+section:not(.section_slider):not(.section_rating)
+  .swiper:not(.swiper-initialized)
+  .swiper-wrapper {
+  max-height: 169px;
+}
+section:not(.section_slider)
+  .swiper:not(.swiper-initialized)
+  .swiper-wrapper
+  .swiper-slide
+  img {
+  filter: blur(7px);
+}
+section.section_rating .swiper:not(.swiper-initialized),
+section.section_rating .swiper:not(.swiper-initialized) .swiper-wrapper,
+section.section_rating .swiper:not(.swiper-initialized) .swiper-wrapper img {
+  height: 270px;
+}
+section.section_rating
+  .swiper:not(.swiper-initialized)
+  .swiper-wrapper
+  .swiper-slide {
+  margin-right: 80px;
+  width: 226px;
+  height: 270px;
+}
+
 .swiper-wrapper {
   display: flex;
   width: 100%;

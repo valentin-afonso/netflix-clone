@@ -18,14 +18,14 @@ export default async function Home() {
 
   return (
     <main>
-      <section className="h-screen mb-10">
+      <section className="section_slider h-screen mb-10">
         <SliderHome />
       </section>
       <section className="pl-20 mb-10">
         <TitleSecond>Popular</TitleSecond>
         <PopularMovies />
       </section>
-      <section className="pl-36 mb-10">
+      <section className="section_rating pl-36 mb-10">
         <TitleSecond>Top rated</TitleSecond>
         <TopRatedMovies />
       </section>
