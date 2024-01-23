@@ -143,7 +143,15 @@ section.section_rating
 .swiper-button-disabled {
   opacity: 0 !important;
 }
-
+.popup {
+  max-height: 98vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.popup::-webkit-scrollbar {
+  display: none;
+}
 .rating_text {
   transform: translate(-62px, 62px);
   -webkit-text-stroke: 4px theme("colors.gray");

@@ -18,24 +18,45 @@ export default function Popup({ result, setSelectedId }: any) {
         </div>
         <Image
           src={img_path}
-          width={720}
-          height={405}
+          width={920}
+          height={500}
           alt="Picture of the author"
           className="w-full"
         />
-        <p className="absolute w-full bottom-1 left-1 text-xl">
+        <p className="absolute w-full bottom-1 left-0 pl-12 text-xl">
           {result.title}
         </p>
       </div>
-      <div className="bg-dark-light p-4">
-        <p>
-          <span>{result.vote_average}/10</span>
-          <span className="text-sm"> ({result.vote_count} votes)</span>
-        </p>
-
-        <p>{result.original_language}</p>
-        {result.adult && <div>+18</div>}
-        <p>{result.overview}</p>
+      <div className="flex justify-between bg-dark-light p-12 ">
+        <div className="flex flex-col">
+          <div className="flex items-center mb-4">
+            <p className="font-bold mr-2.5">{result.release_date}</p>
+            <p>
+              <span>{result.vote_average}/10</span>
+              <span className="text-sm"> ({result.vote_count} votes)</span>
+            </p>
+          </div>
+          {result.adult && (
+            <div>
+              <span>+18</span>violence
+            </div>
+          )}
+          <p className="text-base max-w-md">{result.overview}</p>
+        </div>
+        <ul>
+          <li>
+            <p className="text-sm">
+              <span className="text-grey-medium mr-2.5">Origin</span>
+              <span>{result.original_language}</span>
+            </p>
+          </li>
+          <li>
+            <p className="text-sm">
+              <span className="text-grey-medium mr-2.5">Genre</span>
+              <span>Suspense</span>
+            </p>
+          </li>
+        </ul>
       </div>
     </>
   );

@@ -9,7 +9,10 @@ export default function NavLinks({ name, href }: any) {
   const linkClassName = isActive ? "active" : "";
   return (
     <>
-      <Link href={href} className={`px-5 py-5 inline-block ${linkClassName}`}>
+      <Link
+        href={href}
+        className={`px-5 py-5 inline-block text-sm ${linkClassName}`}
+      >
         {name}
       </Link>
     </>
