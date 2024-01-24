@@ -26,7 +26,7 @@ export default function Card({ result, setSelectedId, setSelectedMovie }: any) {
         </figure>
         <div className="absolute bottom-0 px-1 py-1 w-full hidden group-hover:block">
           <p>{result.title}</p>
-          <div>{result.vote_average}</div>
+          <div>{result.vote_average}/10</div>
         </div>
       </motion.div>
     </>
