@@ -8,8 +8,18 @@ import Popup from "@/app/ui/Popup";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContentTitle() {
-  const [selectedMovie, setSelectedMovie] = useState(null);
   const [selectedId, setSelectedId] = useState(null);
+  const result = {
+    id: 1,
+    title: "Blade runner 2049",
+    backdrop_path: "",
+    overview:
+      "In 2049, society is destabilized by numerous tensions between humans and bio-engineered slaves. Officer K is a blade runner, part of an elite intervention force tasked with finding and eliminating those who defy human orders. When he uncovers a long-buried secret with the potential to alter the world, the highest authorities decide that he, in turn, must be hunted down and eliminated. He must find Rick Deckard.",
+    vote_average: 9,
+    vote_count: 625,
+    original_language: "en",
+    adult: false,
+  };
   return (
     <>
       <div className="absolute bottom-1/4 left-9 z-1">
@@ -25,8 +35,31 @@ export default function ContentTitle() {
           Movie lover? This app is designed for you! Find your favorite films,
           discover the latest releases, or keep an eye on upcoming movies.
         </p>
-        <Button>More information</Button>
+        <Button setSelectedId={setSelectedId}>More information</Button>
       </div>
+      <AnimatePresence>
+        {selectedId && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0, y: "-50%", x: "-50%" }}
+            animate={{ opacity: 1, scale: 1, y: "-50%", x: "-50%" }}
+            exit={{ opacity: 0, scale: 0, y: "-50%", x: "-50%" }}
+            className="popup fixed top-1/2 left-1/2 w-140"
+          >
+            <Popup result={result} setSelectedId={setSelectedId} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {selectedId && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed top-0 left-0 w-full h-full z-20 bg-dark/[.8]"
+            onClick={() => setSelectedId(null)}
+          ></motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
