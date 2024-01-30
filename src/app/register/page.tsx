@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { getAuthSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
-import LoginForm from "@/app/ui/auth/LoginForm";
 
-export default async function Page() {
+import RegisterForm from "@/app/ui/auth/RegisterForm";
+export default async function page() {
   const session = await getAuthSession();
 
   if (session) {
@@ -20,7 +20,7 @@ export default async function Page() {
           alt="cover"
         />
       </div>
-      <LoginForm />
+      <RegisterForm />
     </div>
   );
 }
