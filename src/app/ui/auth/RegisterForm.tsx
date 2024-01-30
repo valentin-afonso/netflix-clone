@@ -14,10 +14,12 @@ export default function RegisterForm() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
     if (!name || !email || !password) {
       setError("All fields are necessary.");
       return;
     }
+
     try {
       const res = await fetch("api/register", {
         method: "POST",
@@ -30,6 +32,7 @@ export default function RegisterForm() {
           password,
         }),
       });
+
       if (res.ok) {
         const form = e.target;
         form.reset();
@@ -77,13 +80,7 @@ export default function RegisterForm() {
               />
             </li>
             <li className="mb-1">
-              <input
-                type="submit"
-                name="submit"
-                id="submit"
-                value="Sign in"
-                className="btn btn-primary w-full"
-              />
+              <button className="btn btn-primary w-full">Register</button>
             </li>
           </ul>
           {error && <p>{error}</p>}
