@@ -5,12 +5,15 @@ import Title from "@/app/ui/Title";
 import { LoginButton } from "@/app/ui/auth/LoginButton";
 import Label from "@/app/ui/Label";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function RegisterForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  const router = useRouter();
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -51,7 +54,7 @@ export default function RegisterForm() {
       if (res.ok) {
         const form = e.target;
         form.reset();
-        // router.push("/");
+        router.push("/");
       } else {
         console.log("User registration failed.");
       }
