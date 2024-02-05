@@ -5,7 +5,7 @@ export const LoginButton = () => {
   return (
     <button
       onClick={async () => {
-        await signIn();
+        await signIn("github");
       }}
       className="btn btn-primary"
     >
