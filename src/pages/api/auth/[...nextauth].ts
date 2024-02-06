@@ -15,11 +15,6 @@ if (!githubId || !githubSecret) {
 
 export const authConfig = {
   providers: [
-    GitHubProvider({
-      id: "github",
-      clientId: githubId,
-      clientSecret: githubSecret,
-    }),
     CredentialsProvider({
       id: "credentials",
       name: "credentials",
@@ -44,19 +39,34 @@ export const authConfig = {
           }
 
           return user;
+          // return { id: user.id, email: user.email };
         } catch (error) {
           console.log("Error: ", error);
         }
       },
     }),
+    GitHubProvider({
+      id: "github",
+      clientId: githubId,
+      clientSecret: githubSecret,
+    }),
   ],
   callbacks: {
+    jwt: async ({ token, user, account, profile, isNewUser }) => {
+      token.id = user.id;
+      console.log("token: ", token);
+      return token;
+    },
     session: async ({ session, user }) => {
       if (session.user) {
         session.user.id = user.id;
       }
       return session;
     },
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  pages: {
+    signIn: "/",
   },
   adapter: PrismaAdapter(prisma),
 } satisfies NextAuthOptions;
