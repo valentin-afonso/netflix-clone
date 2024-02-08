@@ -6,6 +6,9 @@ export default function Popup({ result, setSelectedId }: any) {
   if (result.id === 1) {
     img_path = "/img-blade-runner-1.webp";
   }
+  const genres = result.genres;
+  const companies = result.production_companies;
+
   // const { base64 } = await getBlurData(`https://image.tmdb.org/t/p/w500${result.backdrop_path}`);
   return (
     <>
@@ -35,14 +38,17 @@ export default function Popup({ result, setSelectedId }: any) {
               <span>{result.vote_average}/10</span>
               <span className="text-sm"> ({result.vote_count} votes)</span>
             </p>
+            <p>{result.status}</p>
           </div>
           {result.adult && (
             <div>
               <span>+18</span>violence
             </div>
           )}
+          <p className="text-base max-w-md">{result.tagline}</p>
           <p className="text-base max-w-md">{result.overview}</p>
         </div>
+
         <ul>
           <li>
             <p className="text-sm">
@@ -53,8 +59,36 @@ export default function Popup({ result, setSelectedId }: any) {
           <li>
             <p className="text-sm">
               <span className="text-grey-medium mr-2.5">Genre</span>
-              <span>Suspense</span>
             </p>
+            <ul>
+              {genres.map((genre: any) => (
+                <li key={genre.id}>{genre.name}</li>
+              ))}
+            </ul>
+          </li>
+          <li>
+            <p className="text-sm">
+              <span className="text-grey-medium mr-2.5">Budget</span>
+              <span>{result.budget} €</span>
+            </p>
+          </li>
+          <li>
+            <p className="text-sm">
+              <span className="text-grey-medium mr-2.5">Revenue</span>
+              <span>{result.revenue} €</span>
+            </p>
+          </li>
+          <li>
+            <p className="text-sm">
+              <span className="text-grey-medium mr-2.5">Companies</span>
+            </p>
+            <ul>
+              {companies.map((companie: any) => (
+                <li key={companie.id}>
+                  {companie.name} ({companie.origin_country})
+                </li>
+              ))}
+            </ul>
           </li>
         </ul>
       </div>

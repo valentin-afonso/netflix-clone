@@ -1,11 +1,17 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+const API_KEY = process.env.IMDB_KEY;
+
 export default function Card({ result, setSelectedId, setSelectedMovie }: any) {
   //backdrop_path || poster_path
-  const handlePopup = (result: any) => {
+  const handlePopup = async (result: any) => {
+    const res = await fetch(`/api/movie?id=${result.id}`);
+    const movie = await res.json();
+    console.log(movie.data.title);
+
     setSelectedId(result.id);
-    setSelectedMovie(result);
+    setSelectedMovie(movie.data);
   };
 
   return (
