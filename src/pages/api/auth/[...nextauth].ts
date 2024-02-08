@@ -14,6 +14,10 @@ if (!githubId || !githubSecret) {
 }
 
 export const authConfig = {
+  session: { strategy: "jwt" },
+  jwt: {
+    secret: process.env.NEXTAUTH_SECRET,
+  },
   providers: [
     CredentialsProvider({
       id: "credentials",
@@ -39,7 +43,6 @@ export const authConfig = {
           }
 
           return user;
-          // return { id: user.id, email: user.email };
         } catch (error) {
           console.log("Error: ", error);
         }
@@ -53,20 +56,30 @@ export const authConfig = {
   ],
   callbacks: {
     jwt: async ({ token, user, account, profile, isNewUser }) => {
-      token.id = user.id;
-      console.log("token: ", token);
+      if (user) {
+        token.id = user.id;
+        token.name = user.name;
+        token.email = user.email;
+        token.image = user.image;
+      } else if (account) {
+        token.id = account.providerAccountId;
+      }
       return token;
     },
-    session: async ({ session, user }) => {
-      if (session.user) {
-        session.user.id = user.id;
-      }
+    session: async ({ session, token, user }) => {
+      session.user = {
+        id: token.id,
+        name: token.name,
+        email: token.email,
+        image: token.image,
+      };
+      // console.log("session: ", session);
+
       return session;
     },
   },
-  secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "/",
+    signIn: "/login",
   },
   adapter: PrismaAdapter(prisma),
 } satisfies NextAuthOptions;
