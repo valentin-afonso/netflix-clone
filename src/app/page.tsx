@@ -11,7 +11,6 @@ import { redirect } from "next/navigation";
 
 export default async function Home() {
   const session = await getAuthSession();
-  console.log("session final: ", session);
 
   if (!session) {
     redirect("/login");

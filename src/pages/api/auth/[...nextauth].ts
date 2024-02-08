@@ -32,7 +32,6 @@ export const authConfig = {
               email: email,
             },
           });
-          console.log("user: ", user);
           if (!user) {
             return null;
           }
