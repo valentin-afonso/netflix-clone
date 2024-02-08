@@ -19,6 +19,44 @@ export default function ContentTitle() {
     vote_count: 625,
     original_language: "en",
     adult: false,
+    budget: 35000000,
+    revenue: 122926919,
+    genres: [
+      {
+        id: 28,
+        name: "Action",
+      },
+      {
+        id: 53,
+        name: "Thriller",
+      },
+      {
+        id: 18,
+        name: "Drama",
+      },
+    ],
+    production_companies: [
+      {
+        id: 14,
+        logo_path: "/m6AHu84oZQxvq7n1rsvMNJIAsMu.png",
+        name: "Miramax",
+        origin_country: "US",
+      },
+      {
+        id: 118475,
+        logo_path: null,
+        name: "Cedar Park Entertainment",
+        origin_country: "US",
+      },
+      {
+        id: 218150,
+        logo_path: null,
+        name: "Punch Palace Productions",
+        origin_country: "GB",
+      },
+    ],
+    status: "Released",
+    tagline: "Expose the corruption. Protect the hive.",
   };
   return (
     <>

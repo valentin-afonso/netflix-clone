@@ -3,11 +3,11 @@ import Close from "@/app/ui/svg/Close";
 
 export default function Popup({ result, setSelectedId }: any) {
   let img_path = `https://image.tmdb.org/t/p/w500${result.backdrop_path}`;
+  const genres = result.genres;
+  const companies = result.production_companies;
   if (result.id === 1) {
     img_path = "/img-blade-runner-1.webp";
   }
-  const genres = result.genres;
-  const companies = result.production_companies;
 
   // const { base64 } = await getBlurData(`https://image.tmdb.org/t/p/w500${result.backdrop_path}`);
   return (
