@@ -70,6 +70,7 @@ export default function Results({ results }: any) {
             onClick={() => setSelectedId(null)}
           ></motion.div>
         )}
+        s
       </AnimatePresence>
     </>
   );

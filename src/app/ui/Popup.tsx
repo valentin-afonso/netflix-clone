@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Close from "@/app/ui/svg/Close";
+import CirclePlus from "@/app/ui/svg/CirclePlus";
 import { useState, useEffect } from "react";
 import Skeleton from "./Skeleton";
 
@@ -22,6 +23,10 @@ export default function Popup({ result, setSelectedId }: any) {
   const companies = result.production_companies;
 
   // const { base64 } = await getBlurData(`https://image.tmdb.org/t/p/w500${result.backdrop_path}`);
+  const handleWhishlist = () => {
+    console.log("add to wishlist");
+  };
+
   return (
     <>
       <div className="relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-dark-light before:to-transparent">
@@ -41,6 +46,12 @@ export default function Popup({ result, setSelectedId }: any) {
         <p className="absolute w-full bottom-1 left-0 pl-12 text-xl">
           {result.title}
         </p>
+        <div
+          className="absolute right-12 bottom-4"
+          onClick={() => handleWhishlist()}
+        >
+          <CirclePlus />
+        </div>
       </div>
       <div className="relative flex justify-between bg-dark-light p-12 ">
         {loading ? (
