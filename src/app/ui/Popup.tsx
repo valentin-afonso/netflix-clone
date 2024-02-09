@@ -3,6 +3,7 @@ import Close from "@/app/ui/svg/Close";
 import CirclePlus from "@/app/ui/svg/CirclePlus";
 import { useState, useEffect } from "react";
 import Skeleton from "./Skeleton";
+import { Toaster, toast } from "sonner";
 
 export default function Popup({ result, setSelectedId }: any) {
   const [loading, setLoading] = useState(true);
@@ -25,10 +26,24 @@ export default function Popup({ result, setSelectedId }: any) {
   // const { base64 } = await getBlurData(`https://image.tmdb.org/t/p/w500${result.backdrop_path}`);
   const handleWhishlist = () => {
     console.log("add to wishlist");
+    toast.message("Add to your wishlist with success", {
+      description: "titre du film",
+    });
+    /*
+    toast.custom((t) => (
+      <div className="bg-slate-200 w-[350px] border-solid border-slate-800 rounded-lg">
+        <h1>Custom toast</h1>
+        <button onClick={() => toast.dismiss(t)}>
+          <Close />
+        </button>
+      </div>
+    ));
+    */
   };
 
   return (
     <>
+      <Toaster />
       <div className="relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-dark-light before:to-transparent">
         <div
           className="absolute flex items-center justify-center w-8 h-8 bg-black rounded-full top-1 right-1 cursor-pointer"
