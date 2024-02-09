@@ -8,7 +8,6 @@ export default function Card({ result, setSelectedId, setSelectedMovie }: any) {
   const handlePopup = async (result: any) => {
     const res = await fetch(`/api/movie?id=${result.id}`);
     const movie = await res.json();
-    console.log(movie.data.title);
 
     setSelectedId(result.id);
     setSelectedMovie(movie.data);

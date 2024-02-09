@@ -1,13 +1,25 @@
 import Image from "next/image";
 import Close from "@/app/ui/svg/Close";
+import { useState, useEffect } from "react";
+import Skeleton from "./Skeleton";
 
 export default function Popup({ result, setSelectedId }: any) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, [result]);
+
   let img_path = `https://image.tmdb.org/t/p/w500${result.backdrop_path}`;
-  const genres = result.genres;
-  const companies = result.production_companies;
   if (result.id === 1) {
     img_path = "/img-blade-runner-1.webp";
   }
+  const genres = result.genres;
+  const companies = result.production_companies;
 
   // const { base64 } = await getBlurData(`https://image.tmdb.org/t/p/w500${result.backdrop_path}`);
   return (
@@ -30,67 +42,76 @@ export default function Popup({ result, setSelectedId }: any) {
           {result.title}
         </p>
       </div>
-      <div className="flex justify-between bg-dark-light p-12 ">
-        <div className="flex flex-col">
-          <div className="flex items-center mb-4">
-            <p className="font-bold mr-2.5">{result.release_date}</p>
-            <p>
-              <span>{result.vote_average}/10</span>
-              <span className="text-sm"> ({result.vote_count} votes)</span>
-            </p>
-            <p>{result.status}</p>
-          </div>
-          {result.adult && (
-            <div>
-              <span>+18</span>violence
+      <div className="relative flex justify-between bg-dark-light p-12 ">
+        {loading ? (
+          <Skeleton />
+        ) : (
+          <>
+            <div className="flex flex-col">
+              <div className="flex items-center mb-4">
+                <p className="font-bold mr-2.5">{result.release_date}</p>
+                <p>
+                  <span>{result.vote_average}/10</span>
+                  <span className="text-sm"> ({result.vote_count} votes)</span>
+                </p>
+                <p>{result.status}</p>
+              </div>
+              {result.adult && (
+                <div>
+                  <span>+18</span>violence
+                </div>
+              )}
+              <p className="text-base max-w-md font-bold mb-1">
+                {result.tagline}
+              </p>
+              <p className="text-base max-w-md">{result.overview}</p>
             </div>
-          )}
-          <p className="text-base max-w-md">{result.tagline}</p>
-          <p className="text-base max-w-md">{result.overview}</p>
-        </div>
-
-        <ul>
-          <li>
-            <p className="text-sm">
-              <span className="text-grey-medium mr-2.5">Origin</span>
-              <span>{result.original_language}</span>
-            </p>
-          </li>
-          <li>
-            <p className="text-sm">
-              <span className="text-grey-medium mr-2.5">Genre</span>
-            </p>
             <ul>
-              {genres.map((genre: any) => (
-                <li key={genre.id}>{genre.name}</li>
-              ))}
+              <li>
+                <p className="text-sm">
+                  <span className="text-grey-medium mr-2.5">Origin</span>
+                  <span>{result.original_language}</span>
+                </p>
+              </li>
+              <li>
+                <p className="text-sm">
+                  <span className="text-grey-medium mr-2.5">Genre</span>
+                </p>
+                <ul>
+                  {genres.map((genre: any) => (
+                    <li key={genre.id} className="text-sm">
+                      {genre.name}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+              <li>
+                <p className="text-sm">
+                  <span className="text-grey-medium mr-2.5">Budget</span>
+                  <span>{result.budget} €</span>
+                </p>
+              </li>
+              <li>
+                <p className="text-sm">
+                  <span className="text-grey-medium mr-2.5">Revenue</span>
+                  <span>{result.revenue} €</span>
+                </p>
+              </li>
+              <li>
+                <p className="text-sm">
+                  <span className="text-grey-medium mr-2.5">Companies</span>
+                </p>
+                <ul>
+                  {companies.map((companie: any) => (
+                    <li key={companie.id} className="text-sm">
+                      {companie.name} ({companie.origin_country})
+                    </li>
+                  ))}
+                </ul>
+              </li>
             </ul>
-          </li>
-          <li>
-            <p className="text-sm">
-              <span className="text-grey-medium mr-2.5">Budget</span>
-              <span>{result.budget} €</span>
-            </p>
-          </li>
-          <li>
-            <p className="text-sm">
-              <span className="text-grey-medium mr-2.5">Revenue</span>
-              <span>{result.revenue} €</span>
-            </p>
-          </li>
-          <li>
-            <p className="text-sm">
-              <span className="text-grey-medium mr-2.5">Companies</span>
-            </p>
-            <ul>
-              {companies.map((companie: any) => (
-                <li key={companie.id}>
-                  {companie.name} ({companie.origin_country})
-                </li>
-              ))}
-            </ul>
-          </li>
-        </ul>
+          </>
+        )}
       </div>
     </>
   );
