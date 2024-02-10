@@ -43,7 +43,6 @@ export default function Popup({ result, setSelectedId }: any) {
 
   return (
     <>
-      <Toaster />
       <div className="relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-dark-light before:to-transparent">
         <div
           className="absolute flex items-center justify-center w-8 h-8 bg-black rounded-full top-1 right-1 cursor-pointer"

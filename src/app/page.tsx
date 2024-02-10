@@ -5,6 +5,7 @@ import NowPlayingMovies from "@/app/ui/NowPlayingMovies";
 import UpcomingMovies from "@/app/ui/UpcomingMovies";
 import TopRatedMovies from "@/app/ui/TopRatedMovies";
 import TitleSecond from "./ui/TitleSecond";
+import { Toaster } from "sonner";
 
 import { getAuthSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
@@ -37,6 +38,7 @@ export default async function Home() {
         <TitleSecond>Upcoming</TitleSecond>
         <UpcomingMovies />
       </section>
+      <Toaster />
     </main>
   );
 }
