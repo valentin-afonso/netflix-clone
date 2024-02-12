@@ -24,7 +24,6 @@ export default function ContentUser(props: any) {
       >
         <p className="text-sm font-medium text-slate-900">{props.username}</p>
         <p className="text-sm text-slate-500">{props.email}</p>
-        <p className="text-sm text-slate-500">{props.id}</p>
         <LogoutButton />
       </div>
     </>

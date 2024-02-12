@@ -7,12 +7,14 @@ import TopRatedMovies from "@/app/ui/TopRatedMovies";
 import TitleSecond from "./ui/TitleSecond";
 import { Toaster } from "sonner";
 
-import { getAuthSession } from "@/lib/auth";
+// import { getAuthSession } from "@/lib/auth";
+import { authOptions } from "@/lib/auth";
+import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
 export default async function Home() {
-  const session = await getAuthSession();
-
+  // const session = await getAuthSession();
+  const session = await getServerSession(authOptions);
   if (!session) {
     redirect("/login");
   }

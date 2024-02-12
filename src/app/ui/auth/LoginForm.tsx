@@ -49,6 +49,7 @@ export default function LoginForm() {
               <input
                 onChange={(e) => setEmail(e.target.value)}
                 type="text"
+                name="email"
                 id="email"
                 className="py-1.5 px-3 rounded-md border border-gray-500"
               />
@@ -58,6 +59,7 @@ export default function LoginForm() {
               <input
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
+                name="password"
                 id="password"
                 className="py-1.5 px-3 rounded-md border border-gray-500"
               />
