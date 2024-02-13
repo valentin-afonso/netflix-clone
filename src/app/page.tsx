@@ -1,4 +1,3 @@
-import { SWRProvider } from "@/app/swr-provider";
 import SliderHome from "@/app/ui/SliderHome";
 import PopularMovies from "@/app/ui/PopularMovies";
 import NowPlayingMovies from "@/app/ui/NowPlayingMovies";

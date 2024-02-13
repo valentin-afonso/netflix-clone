@@ -1,6 +1,4 @@
-import { usePopularMovies } from "@/app/api/imdb/movies";
 import Results from "./Results";
-import { MoviesResponse } from "@/app/api/model/getMoviesParams";
 
 const API_KEY = process.env.IMDB_KEY;
 
