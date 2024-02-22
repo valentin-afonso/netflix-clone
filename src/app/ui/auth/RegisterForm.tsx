@@ -65,10 +65,12 @@ export default function RegisterForm() {
 
   return (
     <div className="w-1/2 flex items-center justify-center">
-      <div className="flex flex-col max-w-sm">
+      <div className="flex flex-col w-full max-w-sm">
         <Title>Register</Title>
-        <p>Already have a account ?</p>
-        <Link href="/login">loggin here !</Link>
+        <div className="my-5 p-1 bg-gray">
+          <p>Already have a account ?</p>
+          <Link href="/login">loggin here !</Link>
+        </div>
         <form onSubmit={handleSubmit}>
           <ul>
             <li className="flex flex-col mb-1">
@@ -104,10 +106,13 @@ export default function RegisterForm() {
           </ul>
           {error && <p>{error}</p>}
         </form>
-        <p className="text-center mb-1">OR continue with</p>
+        <div className="flex items-center mb-1">
+          <div className="block h-px bg-gray w-full mr-1 grow"></div>
+          <p className="text-center whitespace-nowrap">OR continue with</p>
+          <div className="block h-px bg-gray w-full ml-1 grow"></div>
+        </div>
         <div className="flex flex-col gap-y-1.5">
           <LoginButton />
-          <button className="btn btn-primary">Member test</button>
         </div>
       </div>
     </div>

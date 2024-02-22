@@ -46,7 +46,7 @@ export default function LoginForm() {
 
   return (
     <div className="w-1/2 flex items-center justify-center">
-      <div className="flex flex-col max-w-sm">
+      <div className="flex flex-col w-full max-w-sm">
         <Title>Sign in to your acount</Title>
         <div className="my-5 p-1 bg-gray">
           <p>Not a member?</p>
@@ -91,9 +91,9 @@ export default function LoginForm() {
           {error && <p>{error}</p>}
         </form>
         <div className="flex items-center mb-1">
-          <div className="block h-px bg-white w-full mr-1 grow"></div>
+          <div className="block h-px bg-gray w-full mr-1 grow"></div>
           <p className="text-center whitespace-nowrap">OR continue with</p>
-          <div className="block h-px bg-white w-full ml-1 grow"></div>
+          <div className="block h-px bg-gray w-full ml-1 grow"></div>
         </div>
 
         <div className="flex flex-col gap-y-1.5">
