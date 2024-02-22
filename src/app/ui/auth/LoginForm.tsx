@@ -48,8 +48,11 @@ export default function LoginForm() {
     <div className="w-1/2 flex items-center justify-center">
       <div className="flex flex-col max-w-sm">
         <Title>Sign in to your acount</Title>
-        <p>Not a member?</p>
-        <Link href="/register">Create a account here !</Link>
+        <div className="my-5 p-1 bg-gray">
+          <p>Not a member?</p>
+          <Link href="/register">Create a account here !</Link>
+        </div>
+
         <form onSubmit={handleSubmit}>
           <ul>
             <li className="flex flex-col mb-1">
@@ -60,7 +63,7 @@ export default function LoginForm() {
                 name="email"
                 id="email"
                 value={email}
-                className="py-1.5 px-3 rounded-md border border-gray-500"
+                className="py-1.5 px-3 rounded-md border border-gray-500 bg-gray-500"
               />
             </li>
             <li className="flex flex-col mb-1">
@@ -87,11 +90,16 @@ export default function LoginForm() {
           </ul>
           {error && <p>{error}</p>}
         </form>
-        <p className="text-center mb-1">OR continue with</p>
+        <div className="flex items-center mb-1">
+          <div className="block h-px bg-white w-full mr-1 grow"></div>
+          <p className="text-center whitespace-nowrap">OR continue with</p>
+          <div className="block h-px bg-white w-full ml-1 grow"></div>
+        </div>
+
         <div className="flex flex-col gap-y-1.5">
           <LoginButton />
           <button className="btn btn-primary" onClick={handleSubmitUserTest}>
-            Member test
+            Log as test account
           </button>
         </div>
       </div>

@@ -17,6 +17,12 @@
     width: inherit;
   }
 }
+input,
+select,
+textarea {
+  background-color: theme("colors.gray");
+  border: 1px solid theme("colors.grey");
+}
 img,
 h1,
 h2,
@@ -29,6 +35,9 @@ button {
   -webkit-user-select: none;
   -o-user-select: none;
   user-select: none;
+}
+.btn-primary {
+  border: 1px solid #2b2b2b;
 }
 .swiper {
   position: relative;
