@@ -15,6 +15,9 @@ export default function LoginForm() {
 
   const router = useRouter();
 
+  const emailTest = "john-doe@gmail.com";
+  const passwordTest = "azerty";
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
@@ -36,6 +39,11 @@ export default function LoginForm() {
     }
   };
 
+  const handleSubmitUserTest = (e: any) => {
+    setEmail(emailTest);
+    setPassword(passwordTest);
+  };
+
   return (
     <div className="w-1/2 flex items-center justify-center">
       <div className="flex flex-col max-w-sm">
@@ -51,6 +59,7 @@ export default function LoginForm() {
                 type="text"
                 name="email"
                 id="email"
+                value={email}
                 className="py-1.5 px-3 rounded-md border border-gray-500"
               />
             </li>
@@ -61,6 +70,7 @@ export default function LoginForm() {
                 type="password"
                 name="password"
                 id="password"
+                value={password}
                 className="py-1.5 px-3 rounded-md border border-gray-500"
               />
             </li>
@@ -80,7 +90,9 @@ export default function LoginForm() {
         <p className="text-center mb-1">OR continue with</p>
         <div className="flex flex-col gap-y-1.5">
           <LoginButton />
-          <button className="btn btn-primary">Member test</button>
+          <button className="btn btn-primary" onClick={handleSubmitUserTest}>
+            Member test
+          </button>
         </div>
       </div>
     </div>

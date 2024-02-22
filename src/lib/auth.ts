@@ -7,24 +7,6 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 // import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "@/lib/prisma";
 
-/*
-
-import { getServerSession } from "next-auth";
-import { authConfig } from "@/pages/api/auth/[...nextauth]";
-
-export const getAuthSession = () => {
-  return getServerSession(authConfig);
-};
-
-export const getRequiredAuthSession = async () => {
-  const session = await getAuthSession();
-  if (!session?.user) {
-    throw new Error("Session not found");
-  }
-  return session;
-};
-*/
-
 const githubId = process.env.GITHUB_ID;
 const githubSecret = process.env.GITHUB_SECRET;
 
