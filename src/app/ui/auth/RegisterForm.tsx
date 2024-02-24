@@ -6,20 +6,24 @@ import { LoginButton } from "@/app/ui/auth/LoginButton";
 import Label from "@/app/ui/Label";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Spinner from "@/app/ui/svg/Spinner";
 
 export default function RegisterForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setLoading(true);
 
     if (!name || !email || !password) {
       setError("All fields are necessary.");
+      setLoading(false);
       return;
     }
 
@@ -36,6 +40,7 @@ export default function RegisterForm() {
 
       if (user) {
         setError("User already exists.");
+        setLoading(false);
         return;
       }
 
@@ -56,9 +61,11 @@ export default function RegisterForm() {
         form.reset();
         router.push("/");
       } else {
+        setLoading(false);
         console.log("User registration failed.");
       }
     } catch (error) {
+      setLoading(false);
       console.log("Error during registration: ", error);
     }
   };
@@ -101,7 +108,9 @@ export default function RegisterForm() {
               />
             </li>
             <li className="mb-1">
-              <button className="btn btn-primary w-full">Register</button>
+              <button className="btn btn-primary w-full" disabled={loading}>
+                {loading && <Spinner />} Register
+              </button>
             </li>
           </ul>
           {error && (

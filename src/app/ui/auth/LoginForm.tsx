@@ -7,11 +7,13 @@ import Label from "@/app/ui/Label";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Spinner from "@/app/ui/svg/Spinner";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
@@ -20,6 +22,7 @@ export default function LoginForm() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const res = await signIn("credentials", {
@@ -30,11 +33,13 @@ export default function LoginForm() {
 
       if (res && res.error) {
         setError("Invalid Credentials");
+        setLoading(false);
         return;
       }
 
       router.push("/");
     } catch (error) {
+      setLoading(false);
       console.log(error);
     }
   };
@@ -85,7 +90,9 @@ export default function LoginForm() {
               <p>Forgot password ?</p>
             </li>
             <li className="mb-1">
-              <button className="btn btn-primary w-full">Sign in</button>
+              <button className="btn btn-primary w-full" disabled={loading}>
+                {loading && <Spinner />} Sign in
+              </button>
             </li>
           </ul>
           {error && (
