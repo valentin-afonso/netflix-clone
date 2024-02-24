@@ -20,8 +20,8 @@
 input,
 select,
 textarea {
-  background-color: theme("colors.gray");
-  border: 1px solid theme("colors.grey");
+  background-color: rgb(37 37 37);
+  border: 1px solid #4a4a4a;
 }
 img,
 h1,
@@ -165,4 +165,26 @@ section.section_rating
 .rating_text {
   transform: translate(-62px, 62px);
   -webkit-text-stroke: 4px theme("colors.gray");
+}
+
+.spinner {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+.spinner::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url("/spinner.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  animation: loader-spin 1.1s linear infinite;
+  -webkit-animation: loader-spin 1.1s linear infinite;
+}
+@keyframes loader-spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
