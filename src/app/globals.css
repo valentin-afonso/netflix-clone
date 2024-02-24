@@ -39,6 +39,12 @@ button {
 .btn-primary {
   border: 1px solid #2b2b2b;
 }
+
+/*
+***********************************************
+GLOBAL - SWIPER 
+***********************************************
+*/
 .swiper {
   position: relative;
   overflow: visible !important;
@@ -77,6 +83,11 @@ section.section_rating
   height: 270px;
 }
 
+/*
+***********************************************
+GLOBAL - SWIPER PAGINATION
+***********************************************
+*/
 .swiper-wrapper {
   display: flex;
   width: 100%;
@@ -100,11 +111,12 @@ section.section_rating
 }
 .swiper-button-prev::before,
 .swiper-button-next::before {
+  position: relative;
   filter: invert(1);
   width: 4rem;
   height: 4rem;
   display: block;
-  z-index: 1;
+  z-index: 2;
 }
 
 .swiper-button-prev::before {
@@ -119,19 +131,8 @@ section.section_rating
   background-size: contain;
   background-repeat: no-repeat;
 }
-.swiper-button-prev::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(20, 20, 20, 0.6) 50%,
-    rgba(20, 20, 20, 0) 100%
-  );
-}
+
+.swiper-button-prev::after,
 .swiper-button-next::after {
   content: "";
   position: absolute;
@@ -139,6 +140,16 @@ section.section_rating
   top: 0;
   width: 100%;
   height: 100%;
+  z-index: 1 !important;
+}
+.swiper-button-prev::after {
+  background: linear-gradient(
+    to right,
+    rgba(20, 20, 20, 0.6) 50%,
+    rgba(20, 20, 20, 0) 100%
+  );
+}
+.swiper-button-next::after {
   background: linear-gradient(
     to left,
     rgba(20, 20, 20, 0.6) 50%,
@@ -152,6 +163,12 @@ section.section_rating
 .swiper-button-disabled {
   opacity: 0 !important;
 }
+
+/*
+***********************************************
+GLOBAL - POPUP 
+***********************************************
+*/
 .popup {
   max-height: 98vh;
   overflow-y: auto;
@@ -162,11 +179,22 @@ section.section_rating
 .popup::-webkit-scrollbar {
   display: none;
 }
+
+/*
+***********************************************
+GLOBAL - RATING TOP 10
+***********************************************
+*/
 .rating_text {
   transform: translate(-62px, 62px);
   -webkit-text-stroke: 4px theme("colors.gray");
 }
 
+/*
+***********************************************
+GLOBAL - SPINNER / LOADER
+***********************************************
+*/
 .spinner {
   position: relative;
   width: 50px;
