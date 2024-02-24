@@ -88,7 +88,11 @@ export default function LoginForm() {
               <button className="btn btn-primary w-full">Sign in</button>
             </li>
           </ul>
-          {error && <p>{error}</p>}
+          {error && (
+            <div className="p-1 mb-1 bg-red/50 border border-solid border-red/75 rounded">
+              <p className="text-white text-xs">{error}</p>
+            </div>
+          )}
         </form>
         <div className="flex items-center mb-1">
           <div className="block h-px bg-gray w-full mr-1 grow"></div>
