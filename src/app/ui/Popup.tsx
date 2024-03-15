@@ -7,6 +7,8 @@ import { Toaster, toast } from "sonner";
 
 export default function Popup({ result, setSelectedId }: any) {
   const [loading, setLoading] = useState(true);
+  const [movieId, setMovieId] = useState(result.id);
+  const [userId, setUserId] = useState("clswaeozy0001w0dcx5poy4hp");
 
   useEffect(() => {
     setLoading(true);
@@ -24,11 +26,37 @@ export default function Popup({ result, setSelectedId }: any) {
   const companies = result.production_companies;
 
   // const { base64 } = await getBlurData(`https://image.tmdb.org/t/p/w500${result.backdrop_path}`);
-  const handleWhishlist = () => {
-    console.log("add to wishlist");
-    toast.message("Add to your wishlist with success", {
-      description: "titre du film",
-    });
+  const handleWhishlist = async () => {
+    try {
+      if (!movieId || !userId) {
+        // setError("All fields are necessary.");
+        setLoading(false);
+        return;
+      }
+
+      const res = await fetch("api/addToWishlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userId,
+          movieId,
+        }),
+      });
+      if (res.ok) {
+        toast.message("Add to your wishlist with success", {
+          description: "titre du film",
+        });
+      } else {
+        setLoading(false);
+        console.log("adding to wishlist failed.");
+      }
+    } catch (error) {
+      setLoading(false);
+      console.log("Error during adding to wishlist: ", error);
+    }
+
     /*
     toast.custom((t) => (
       <div className="bg-slate-200 w-[350px] border-solid border-slate-800 rounded-lg">
