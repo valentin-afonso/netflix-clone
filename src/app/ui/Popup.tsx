@@ -33,6 +33,22 @@ export default function Popup({ result, setSelectedId }: any) {
         setLoading(false);
         return;
       }
+      const resMovieExists = await fetch("api/existInWishlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userId, movieId }),
+      });
+
+      const { movie } = await resMovieExists.json();
+
+      if (movie) {
+        // setError("Movie already exists.");
+        console.log("Movie already exists in wishlist");
+        setLoading(false);
+        return;
+      }
 
       const res = await fetch("api/addToWishlist", {
         method: "POST",

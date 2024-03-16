@@ -8,8 +8,8 @@ export async function POST(request: Request) {
     console.log("movieId: ", movieId);
     await prisma.wishlist.create({
       data: {
-        userID: JSON.stringify(userId),
-        movieID: JSON.stringify(movieId),
+        userID: `${userId}`,
+        movieID: `${movieId}`,
       },
     });
 
