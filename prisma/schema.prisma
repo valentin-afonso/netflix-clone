@@ -65,6 +65,6 @@ model VerificationToken {
 
 model Wishlist {
   id            String    @id @default(cuid())
-  userID        String?   
+  userEmail     String?   
   movieID       String?
 }

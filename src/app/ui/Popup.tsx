@@ -8,7 +8,16 @@ import { Toaster, toast } from "sonner";
 export default function Popup({ result, setSelectedId }: any) {
   const [loading, setLoading] = useState(true);
   const [movieId, setMovieId] = useState(result.id);
-  const [userId, setUserId] = useState("clswaeozy0001w0dcx5poy4hp");
+  const [userEmail, setUserEmail] = useState("");
+
+  // const res = await fetch(`/api/movie?id=${result.id}`);
+  // const movie = await res.json();
+  // console.log(movie);
+  const getDetails = async (id: any) => {
+    const res = await fetch(`/api/movie?id=${id}`);
+    const movie = await res.json();
+    return movie;
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -26,11 +35,11 @@ export default function Popup({ result, setSelectedId }: any) {
   const companies = result.production_companies;
 
   // const { base64 } = await getBlurData(`https://image.tmdb.org/t/p/w500${result.backdrop_path}`);
+
   const handleWhishlist = async () => {
     try {
-      if (!movieId || !userId) {
-        // setError("All fields are necessary.");
-        setLoading(false);
+      if (!movieId) {
+        // setLoading(false);
         return;
       }
       const resMovieExists = await fetch("api/existInWishlist", {
@@ -38,15 +47,14 @@ export default function Popup({ result, setSelectedId }: any) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ userId, movieId }),
+        body: JSON.stringify({ movieId }),
       });
 
       const { movie } = await resMovieExists.json();
 
       if (movie) {
-        // setError("Movie already exists.");
         console.log("Movie already exists in wishlist");
-        setLoading(false);
+        // setLoading(false);
         return;
       }
 
@@ -56,7 +64,6 @@ export default function Popup({ result, setSelectedId }: any) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          userId,
           movieId,
         }),
       });
@@ -65,11 +72,11 @@ export default function Popup({ result, setSelectedId }: any) {
           description: "titre du film",
         });
       } else {
-        setLoading(false);
+        // setLoading(false);
         console.log("adding to wishlist failed.");
       }
     } catch (error) {
-      setLoading(false);
+      // setLoading(false);
       console.log("Error during adding to wishlist: ", error);
     }
 
@@ -85,12 +92,16 @@ export default function Popup({ result, setSelectedId }: any) {
     */
   };
 
+  const handleClosePopup = () => {
+    setSelectedId(null);
+  };
+
   return (
     <>
       <div className="relative bg-dark-light before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-dark-light before:to-transparent">
         <div
           className="absolute flex items-center justify-center w-8 h-8 bg-black rounded-full top-1 right-1 cursor-pointer"
-          onClick={() => setSelectedId(null)}
+          onClick={() => handleClosePopup()}
         >
           <Close />
         </div>
