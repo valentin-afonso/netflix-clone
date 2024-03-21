@@ -18,6 +18,14 @@ export default async function Home() {
     redirect("/login");
   }
 
+  try {
+    const resMoviesWishlist = await fetch("api/wishlistMovies");
+    const { movie } = await resMoviesWishlist.json();
+  } catch (error) {
+    // setLoading(false);
+    console.log("Error during fetching wishlist: ", error);
+  }
+
   return (
     <main>
       <section className="section_slider h-screen mb-10">
