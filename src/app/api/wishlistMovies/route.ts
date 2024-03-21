@@ -3,9 +3,9 @@ import prisma from "@/lib/prisma";
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 
-export async function GET() {
+export async function POST(request: Request) {
   const session = await getServerSession(authOptions);
-
+  console.log(session);
   try {
     if (session && session.user) {
       const movie = await prisma.wishlist.findMany({
@@ -13,15 +13,17 @@ export async function GET() {
           userEmail: session.user.email,
         },
       });
-      if (movie.length > 0) {
-        return NextResponse.json({ movie: movie });
-      } else {
-        return NextResponse.json({ movie: null });
-      }
+      return NextResponse.json({ movie });
     } else {
-      console.log("error no session found");
+      return NextResponse.json(
+        { message: "No session found for fetching wishlist movies" },
+        { status: 500 }
+      );
     }
   } catch (error) {
-    console.log("error when fetching movies in wishlist");
+    return NextResponse.json(
+      { message: "error when fetching movies in wishlist" },
+      { status: 500 }
+    );
   }
 }
