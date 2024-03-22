@@ -1,26 +1,34 @@
 import TitleSecond from "./TitleSecond";
+import WishlistMovies from "./WishlistMovies";
+import { authOptions } from "@/lib/auth";
+import { getServerSession } from "next-auth";
 
 export default async function Wishlist() {
   try {
-    const resMoviesWishlist = await fetch(
-      "http://localhost:3000/api/wishlistMovies",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    const movie = await resMoviesWishlist.json();
-    console.log(movie);
-    if (movie) {
-      return <></>;
-    } else {
-      return (
-        <>
-          <TitleSecond>Wishlist</TitleSecond>
-        </>
+    const session = await getServerSession(authOptions);
+    if (session && session.user) {
+      const email = session.user.email;
+      const resMoviesWishlist = await fetch(
+        "http://localhost:3000/api/wishlistMovies",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
       );
+      const movies = await resMoviesWishlist.json();
+      if (movies) {
+        return (
+          <>
+            <TitleSecond>Wishlist</TitleSecond>
+            <WishlistMovies movies={movies} />
+          </>
+        );
+      } else {
+        return <></>;
+      }
     }
   } catch (error) {
     // setLoading(false);
