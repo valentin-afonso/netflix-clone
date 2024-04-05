@@ -1,8 +1,11 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+// import { authOptions } from "@/lib/auth";
+// import { getServerSession } from "next-auth";
 
 export async function POST(request: Request) {
   const { email } = await request.json();
+  // const session = await getServerSession(authOptions);
   try {
     const movie = await prisma.wishlist.findMany({
       where: {

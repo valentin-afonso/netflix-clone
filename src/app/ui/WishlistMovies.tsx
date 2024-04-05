@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
+import Results from "./Results";
 
 export default function WishlistMovies({ movies }: any) {
   const [results, setResults] = useState<any[]>([]);
-  /*
   useEffect(() => {
     const fetchMovies = async () => {
       if (movies) {
@@ -11,7 +11,7 @@ export default function WishlistMovies({ movies }: any) {
           const { movieID } = movie;
           const res = await fetch(`/api/movie?id=${movieID}`);
           const data = await res.json();
-          return data;
+          return data.data;
         });
 
         const moviesData = await Promise.all(promises);
@@ -21,8 +21,10 @@ export default function WishlistMovies({ movies }: any) {
 
     fetchMovies();
   }, [movies]);
-  console.log(results);
-  console.log(movies);
-  */
-  return <div>WishlistMovies</div>;
+
+  return (
+    <div>
+      <Results results={results} />
+    </div>
+  );
 }

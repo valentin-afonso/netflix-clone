@@ -9,6 +9,7 @@ import { Navigation } from "swiper/modules";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Results({ results }: any) {
+  // console.log(results);
   register();
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [selectedId, setSelectedId] = useState(null);

@@ -23,7 +23,7 @@ export default async function Wishlist() {
         return (
           <>
             <TitleSecond>Wishlist</TitleSecond>
-            <WishlistMovies movies={movies} />
+            <WishlistMovies movies={movies.movie} />
           </>
         );
       } else {
