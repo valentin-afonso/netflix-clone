@@ -4,6 +4,8 @@ import CirclePlus from "@/app/ui/svg/CirclePlus";
 import { useState, useEffect } from "react";
 import Skeleton from "./Skeleton";
 import { Toaster, toast } from "sonner";
+import Rating from "@/app/ui/Rating";
+import ResleasedTag from "@/app/ui/ResleasedTag";
 
 export default function Popup({ result, setSelectedId }: any) {
   const [loading, setLoading] = useState(true);
@@ -128,14 +130,14 @@ export default function Popup({ result, setSelectedId }: any) {
         ) : (
           <>
             <div className="flex flex-col">
-              <div className="flex items-center mb-4">
-                <p className="font-bold mr-2.5">{result.release_date}</p>
-                <p>
-                  <span>{result.vote_average}/10</span>
-                  <span className="text-sm"> ({result.vote_count} votes)</span>
-                </p>
-                <p>{result.status}</p>
+              <div className="flex items-center mb-1 gap-5">
+                <p className="font-bold">{result.release_date}</p>
+                <Rating
+                  rating={result.vote_average}
+                  voteCount={result.vote_count}
+                />
               </div>
+              <ResleasedTag status={result.status} />
               {result.adult && (
                 <div>
                   <span>+18</span>violence
