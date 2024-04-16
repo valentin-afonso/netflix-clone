@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Rating from "@/app/ui/Rating";
 import { motion } from "framer-motion";
 
 const API_KEY = process.env.IMDB_KEY;
@@ -42,7 +43,7 @@ export default function Card({ result, setSelectedId, setSelectedMovie }: any) {
         </figure>
         <div className="absolute bottom-0 px-1 py-1 w-full hidden group-hover:block">
           <p>{result.title}</p>
-          <div>{result.vote_average}/10</div>
+          <Rating rating={result.vote_average} voteCount={result.vote_count} />
         </div>
       </motion.div>
     </>

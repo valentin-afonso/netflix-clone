@@ -18,6 +18,7 @@ export default function ContentTitle() {
     vote_average: 9,
     vote_count: 625,
     original_language: "en",
+    release_date: "04-10-2017",
     adult: false,
     budget: 35000000,
     revenue: 122926919,
