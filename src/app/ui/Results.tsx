@@ -18,9 +18,11 @@ export default function Results({ results }: any) {
     <>
       <Swiper
         spaceBetween={5}
-        slidesPerView={2}
+        // slidesPerView={2}
+        slidesPerView={"auto"}
         navigation={true}
         modules={[Navigation]}
+        /*
         breakpoints={{
           500: {
             slidesPerView: 3,
@@ -35,11 +37,12 @@ export default function Results({ results }: any) {
             slidesPerView: 6,
           },
         }}
-        className="overflow-visible w-full max-h-slide"
+        */
+        className="slider_results overflow-visible w-full"
       >
         {results.map((result: any) => {
           return (
-            <SwiperSlide key={result.id} className="max-h-slide">
+            <SwiperSlide key={result.id}>
               <Card
                 result={result}
                 setSelectedId={setSelectedId}

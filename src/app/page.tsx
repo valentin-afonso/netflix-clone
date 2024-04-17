@@ -24,10 +24,10 @@ export default async function Home() {
       <section className="section_slider h-screen mb-10">
         <SliderHome />
       </section>
-      <section className="pl-20 mb-10">
+      <section className="pl-4 mb-10 sm:pl-20">
         <Wishlist />
       </section>
-      <section className="pl-20 mb-10">
+      <section className="pl-4 mb-10 sm:pl-20">
         <TitleSecond>Popular</TitleSecond>
         <PopularMovies />
       </section>
@@ -35,11 +35,11 @@ export default async function Home() {
         <TitleSecond>Top rated</TitleSecond>
         <TopRatedMovies />
       </section>
-      <section className="pl-20 mb-10">
+      <section className="pl-4 mb-10 sm:pl-20">
         <TitleSecond>Now playing</TitleSecond>
         <NowPlayingMovies />
       </section>
-      <section className="pl-20 mb-10">
+      <section className="pl-4 mb-10 sm:pl-20">
         <TitleSecond>Upcoming</TitleSecond>
         <UpcomingMovies />
       </section>
