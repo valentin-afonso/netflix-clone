@@ -27,7 +27,7 @@ export default async function RootLayout({
       className="h-full bg-dark w-screen overflow-x-hidden text-white"
     >
       <Provider>
-        <body className={`${inter.className} h-full `}>
+        <body className={`${inter.className} h-full max-w-[100vw]`}>
           {session && <Header />}
           <>{children}</>
           {session && <Footer />}

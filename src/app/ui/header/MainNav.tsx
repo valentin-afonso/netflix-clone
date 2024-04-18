@@ -2,7 +2,7 @@ import NavLinks from "./NavLinks";
 
 export default function MainNav() {
   return (
-    <nav>
+    <nav className="hidden sm:block">
       <ul className="flex justify-center">
         <li>
           <NavLinks name="Home" href="/" />

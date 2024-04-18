@@ -20,7 +20,7 @@ export default async function Home() {
   }
 
   return (
-    <main>
+    <main className="max-w-full overflow-x-hidden">
       <section className="section_slider h-screen mb-10">
         <SliderHome />
       </section>
@@ -31,7 +31,7 @@ export default async function Home() {
         <TitleSecond>Popular</TitleSecond>
         <PopularMovies />
       </section>
-      <section className="section_rating pl-36 mb-10">
+      <section className="section_rating pl-12 mb-10 sm:pl-36">
         <TitleSecond>Top rated</TitleSecond>
         <TopRatedMovies />
       </section>

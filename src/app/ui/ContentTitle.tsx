@@ -67,7 +67,7 @@ export default function ContentTitle() {
           width={868}
           height={417}
           alt="cover"
-          className="w-56"
+          className="w-32 sm:w-56"
         />
         <Title>Welcome on my Netflix app</Title>
         <p className="mt-3 mb-3 max-w-lg pr-4">
