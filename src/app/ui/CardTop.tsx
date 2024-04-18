@@ -7,9 +7,9 @@ export default function CardTop({ result }: any) {
         <Image
           src={`https://image.tmdb.org/t/p/w500${result.poster_path}`}
           width={500}
-          height={500}
+          height={750}
           alt="Picture of the author"
-          className="relative w-40 max-w-none z-10 shadow-xl rounded transition-all duration-500"
+          className="relative w-40 z-10 shadow-xl rounded transition-all duration-500"
         />
       </figure>
       <div className="p-5 hidden">

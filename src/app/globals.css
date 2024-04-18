@@ -134,9 +134,7 @@ section.section_rating
     height: 105px;
   }
   .slider_results_top,
-  .slider_results_top .swiper-wrapper,
-  .slider_results_top .swiper-wrapper .swiper-slide,
-  .slider_results .swiper-wrapper .swiper-slide {
+  .slider_results_top .swiper-wrapper {
     height: 105px;
   }
 }
