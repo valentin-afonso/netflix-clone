@@ -14,13 +14,14 @@ export default async function Page() {
   }
 
   return (
-    <div className="flex max-h-screen overflow-hidden">
-      <div className="w-1/2">
+    <div className="flex h-screen max-h-screen overflow-hidden justify-center">
+      <div className="w-1/2 hidden lg:block">
         <Image
           src="/imgCoverLogin.jpg"
           width={1333}
           height={2000}
           alt="cover"
+          className="w-full h-full object-cover"
         />
       </div>
       <LoginForm />

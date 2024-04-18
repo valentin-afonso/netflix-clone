@@ -50,7 +50,7 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="w-1/2 flex items-center justify-center">
+    <div className="w-full flex items-center justify-center lg:w-1/2 lg:px-4">
       <div className="flex flex-col w-full max-w-sm">
         <Title>Sign in to your acount</Title>
         <div className="my-5 p-1 bg-gray">
