@@ -127,6 +127,12 @@ section.section_rating
   .slider_results_top .swiper-wrapper {
     height: 134px;
   }
+  .slider_results .swiper-wrapper .swiper-slide {
+    max-width: 187px;
+  }
+  .slider_results_top .swiper-wrapper .swiper-slide {
+    max-width: 70px;
+  }
 }
 @media screen and (max-width: 480px) {
   .slider_results,
