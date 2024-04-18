@@ -61,16 +61,16 @@ export default function ContentTitle() {
   };
   return (
     <>
-      <div className="absolute bottom-1/4 left-4 z-1 sm:left-9">
+      <div className="absolute bottom-[35px] left-4 z-1 sm:left-9 sm:bottom-1/4">
         <Image
           src="/logo-blade-runner.webp"
           width={868}
           height={417}
           alt="cover"
-          className="w-32 sm:w-56"
+          className="w-20 sm:w-56"
         />
         <Title>Welcome on my Netflix app</Title>
-        <p className="mt-3 mb-3 max-w-lg pr-4">
+        <p className="text-xs mt-3 mb-3 max-w-lg pr-4 sm:text-base">
           Movie lover? This app is designed for you! Find your favorite films,
           discover the latest releases, or keep an eye on upcoming movies.
         </p>

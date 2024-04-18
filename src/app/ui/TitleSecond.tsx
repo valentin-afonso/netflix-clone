@@ -3,5 +3,5 @@ export default function TitleSecond({
 }: {
   children: React.ReactNode;
 }) {
-  return <h2 className="text-l font-medium mb-1">{children}</h2>;
+  return <h2 className="text-sm font-medium mb-1 sm:text-xl ">{children}</h2>;
 }

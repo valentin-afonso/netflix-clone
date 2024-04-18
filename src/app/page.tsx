@@ -21,25 +21,25 @@ export default async function Home() {
 
   return (
     <main className="max-w-full overflow-x-hidden">
-      <section className="section_slider h-screen mb-10">
+      <section className="section_slider h-[21rem] mb-10 relative sm:h-screen">
         <SliderHome />
       </section>
-      <section className="pl-4 mb-10 sm:pl-20">
+      <section className="pl-4 mb-3 sm:mb-10 sm:pl-20">
         <Wishlist />
       </section>
-      <section className="pl-4 mb-10 sm:pl-20">
+      <section className="pl-4 mb-3 sm:mb-10 sm:pl-20">
         <TitleSecond>Popular</TitleSecond>
         <PopularMovies />
       </section>
-      <section className="section_rating pl-12 mb-10 sm:pl-36">
+      <section className="section_rating pl-12 mb-3 sm:mb-10 sm:pl-36">
         <TitleSecond>Top rated</TitleSecond>
         <TopRatedMovies />
       </section>
-      <section className="pl-4 mb-10 sm:pl-20">
+      <section className="pl-4 mb-3 sm:mb-10 sm:pl-20">
         <TitleSecond>Now playing</TitleSecond>
         <NowPlayingMovies />
       </section>
-      <section className="pl-4 mb-10 sm:pl-20">
+      <section className="pl-4 mb-3 sm:mb-10 sm:pl-20">
         <TitleSecond>Upcoming</TitleSecond>
         <UpcomingMovies />
       </section>

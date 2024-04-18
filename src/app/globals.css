@@ -239,6 +239,14 @@ GLOBAL - POPUP
 GLOBAL - RATING TOP 10
 ***********************************************
 */
+.section_rating h2 {
+  margin-left: -72px;
+}
+@media screen and (max-width: 550px) {
+  .section_rating h2 {
+    margin-left: -35px;
+  }
+}
 .rating_text {
   transform: translate(-62px, 62px);
   -webkit-text-stroke: 4px theme("colors.gray");
