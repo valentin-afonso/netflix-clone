@@ -129,9 +129,11 @@ section.section_rating
   }
 }
 @media screen and (max-width: 480px) {
+  .slider_results,
   .slider_results .swiper-wrapper {
     height: 105px;
   }
+  .slider_results_top,
   .slider_results_top .swiper-wrapper {
     height: 105px;
   }
