@@ -230,7 +230,7 @@ GLOBAL - POPUP
 ***********************************************
 */
 .popup {
-  max-height: 98vh;
+  overflow-x: hidden;
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
