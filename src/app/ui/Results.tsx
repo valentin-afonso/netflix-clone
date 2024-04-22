@@ -14,6 +14,11 @@ export default function Results({ results }: any) {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [selectedId, setSelectedId] = useState(null);
 
+  const handleClosePopup = () => {
+    document.querySelector("body")?.classList.remove("popup_open");
+    setSelectedId(null);
+  };
+
   return (
     <>
       <Swiper
@@ -71,7 +76,7 @@ export default function Results({ results }: any) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed top-0 left-0 w-full h-full z-20 bg-black/[.8]"
-            onClick={() => setSelectedId(null)}
+            onClick={() => handleClosePopup()}
           ></motion.div>
         )}
         s

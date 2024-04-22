@@ -59,6 +59,12 @@ export default function ContentTitle() {
     status: "Released",
     tagline: "Expose the corruption. Protect the hive.",
   };
+
+  const handleClosePopup = () => {
+    document.querySelector("body")?.classList.remove("popup_open");
+    setSelectedId(null);
+  };
+
   return (
     <>
       <div className="absolute bottom-[35px] left-4 z-1 sm:left-9 sm:bottom-1/4">
@@ -95,7 +101,7 @@ export default function ContentTitle() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed top-0 left-0 w-full h-full z-20 bg-dark/[.8]"
-            onClick={() => setSelectedId(null)}
+            onClick={() => handleClosePopup()}
           ></motion.div>
         )}
       </AnimatePresence>

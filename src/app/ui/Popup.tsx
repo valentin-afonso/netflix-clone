@@ -125,7 +125,7 @@ export default function Popup({ result, setSelectedId }: any) {
           <CirclePlus />
         </div>
       </div>
-      <div className="relative flex flex-col justify-between gap-4 bg-dark-light p-7 sm:p-12 sm:flex:row sm:gap-0">
+      <div className="relative flex flex-col justify-between gap-4 bg-dark-light p-7 sm:p-12 sm:flex-row sm:gap-0">
         {loading ? (
           <Skeleton />
         ) : (
