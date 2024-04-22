@@ -229,6 +229,9 @@ GLOBAL - SWIPER PAGINATION
 GLOBAL - POPUP 
 ***********************************************
 */
+body.popup_open {
+  overflow: hidden;
+}
 .popup {
   overflow-x: hidden;
   overflow-y: auto;

@@ -95,6 +95,7 @@ export default function Popup({ result, setSelectedId }: any) {
   };
 
   const handleClosePopup = () => {
+    document.querySelector("body")?.classList.remove("popup_open");
     setSelectedId(null);
   };
 
@@ -102,7 +103,7 @@ export default function Popup({ result, setSelectedId }: any) {
     <>
       <div className="relative bg-dark-light before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-dark-light before:to-transparent">
         <div
-          className="absolute flex items-center justify-center w-8 h-8 bg-black rounded-full top-1 right-1 cursor-pointer"
+          className="absolute flex items-center justify-center w-8 h-8 bg-black rounded-full top-4 right-4 sm:top-1 sm:right-1 cursor-pointer"
           onClick={() => handleClosePopup()}
         >
           <Close />
@@ -114,23 +115,23 @@ export default function Popup({ result, setSelectedId }: any) {
           alt="Picture of the author"
           className="w-full"
         />
-        <p className="absolute w-full bottom-1 left-0 pl-12 text-xl">
+        <p className="absolute w-full bottom-4 sm:bottom-1 left-0 pl-4 sm:pl-12 text-base sm:text-xl max-w-[90vw] sm:max-w-full">
           {result.title}
         </p>
         <div
-          className="absolute right-12 bottom-4"
+          className="absolute bottom-4 right-4 sm:right-12"
           onClick={() => handleWhishlist()}
         >
           <CirclePlus />
         </div>
       </div>
-      <div className="relative flex justify-between bg-dark-light p-12 ">
+      <div className="relative flex flex-col justify-between gap-4 bg-dark-light p-7 sm:p-12 sm:flex:row sm:gap-0">
         {loading ? (
           <Skeleton />
         ) : (
           <>
             <div className="flex flex-col">
-              <div className="flex items-center mb-1 gap-5">
+              <div className="flex flex-col items-start mb-1 gap-0 sm:gap-5 sm:flex-row sm:items-center">
                 <p className="font-bold">{result.release_date}</p>
                 <Rating
                   rating={result.vote_average}
