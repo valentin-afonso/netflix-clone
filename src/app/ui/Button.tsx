@@ -1,11 +1,12 @@
 "use client";
+import { useThemeContext } from "@/providers/popup-provider";
 
 interface ButtonProps {
   children: React.ReactNode;
-  setSelectedId: any;
 }
 
-export default function Button({ children, setSelectedId }: ButtonProps) {
+export default function Button({ children }: { children: React.ReactNode }) {
+  const { setSelectedId } = useThemeContext();
   const handlePopup = () => {
     document.querySelector("body")?.classList.add("popup_open");
     setSelectedId(1);

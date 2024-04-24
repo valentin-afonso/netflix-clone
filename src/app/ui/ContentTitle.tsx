@@ -8,7 +8,7 @@ import Popup from "@/app/ui/Popup";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContentTitle() {
-  const [selectedId, setSelectedId] = useState(null);
+  // const [selectedId, setSelectedId] = useState(null);
   const result = {
     id: 1,
     title: "Blade runner 2049",
@@ -59,11 +59,12 @@ export default function ContentTitle() {
     status: "Released",
     tagline: "Expose the corruption. Protect the hive.",
   };
-
+  /*
   const handleClosePopup = () => {
     document.querySelector("body")?.classList.remove("popup_open");
     setSelectedId(null);
   };
+  */
 
   return (
     <>
@@ -80,31 +81,8 @@ export default function ContentTitle() {
           Movie lover? This app is designed for you! Find your favorite films,
           discover the latest releases, or keep an eye on upcoming movies.
         </p>
-        <Button setSelectedId={setSelectedId}>More information</Button>
+        <Button>More information</Button>
       </div>
-      <AnimatePresence>
-        {selectedId && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0, y: "-50%", x: "-50%" }}
-            animate={{ opacity: 1, scale: 1, y: "-50%", x: "-50%" }}
-            exit={{ opacity: 0, scale: 0, y: "-50%", x: "-50%" }}
-            className="popup fixed top-1/2 left-1/2 w-full max-h-screen sm:max-h-[98vh] sm:w-[600px] lg:w-140"
-          >
-            <Popup result={result} setSelectedId={setSelectedId} />
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {selectedId && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed top-0 left-0 w-full h-full z-20 bg-dark/[.8]"
-            onClick={() => handleClosePopup()}
-          ></motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 }

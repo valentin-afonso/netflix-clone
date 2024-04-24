@@ -13,6 +13,7 @@ export default async function TopRatedMovies() {
   const data = await res.json();
   const results = data.results;
   const movies = results.slice(0, 10);
+
   return (
     <>
       <ResultsTop results={movies} />

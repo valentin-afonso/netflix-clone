@@ -7,6 +7,7 @@ import Footer from "@/app/ui/footer/Footer";
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import Provider from "./Provider";
+import PopupProvider from "@/providers/popup-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,13 +27,11 @@ export default async function RootLayout({
       lang="en"
       className="h-full bg-dark w-screen overflow-x-hidden text-white"
     >
-      <Provider>
-        <body className={`${inter.className} h-full max-w-[100vw]`}>
-          {session && <Header />}
-          <>{children}</>
-          {session && <Footer />}
-        </body>
-      </Provider>
+      <body className={`${inter.className} h-full max-w-[100vw]`}>
+        {session && <Header />}
+        <PopupProvider>{children}</PopupProvider>
+        {session && <Footer />}
+      </body>
     </html>
   );
 }
