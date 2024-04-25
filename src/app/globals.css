@@ -306,7 +306,7 @@ body.popup_open {
 .popup::-webkit-scrollbar {
   display: none;
 }
-/*
+
 @media screen and (max-width: 640px) {
   .popup {
     transform: none !important;
@@ -314,7 +314,7 @@ body.popup_open {
     top: 0 !important;
   }
 }
-*/
+
 /*
 ***********************************************
 GLOBAL - RATING TOP 10
