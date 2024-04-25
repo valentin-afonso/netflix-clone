@@ -288,11 +288,11 @@ GLOBAL - SWIPER PAGINATION
 GLOBAL - POPUP 
 ***********************************************
 */
-/*
+
 html:has(body.popup_open) {
   overflow-y: hidden;
 }
-*/
+
 body.popup_open {
   overflow: hidden;
 }
@@ -306,7 +306,15 @@ body.popup_open {
 .popup::-webkit-scrollbar {
   display: none;
 }
-
+/*
+@media screen and (max-width: 640px) {
+  .popup {
+    transform: none !important;
+    left: 0 !important;
+    top: 0 !important;
+  }
+}
+*/
 /*
 ***********************************************
 GLOBAL - RATING TOP 10

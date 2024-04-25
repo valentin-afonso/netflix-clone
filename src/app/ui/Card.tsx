@@ -9,6 +9,7 @@ export default function Card({ result }: any) {
   //backdrop_path || poster_path
   const { setSelectedId } = useThemeContext();
   const handlePopup = (resultId: any) => {
+    document.querySelector("body")?.classList.add("popup_open");
     setSelectedId(resultId);
   };
 

@@ -161,7 +161,7 @@ export default async function PopupContent({ movieId, setSelectedId }: any) {
           {movie?.title}
         </p>
         <div
-          className="absolute bottom-4 right-4 sm:right-12"
+          className="absolute bottom-4 right-4 cursor-pointer sm:right-12"
           onClick={() => handleWhishlist()}
         >
           <CirclePlus />
