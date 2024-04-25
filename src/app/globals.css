@@ -17,6 +17,7 @@
     width: inherit;
   }
 }
+
 input,
 select,
 textarea {
@@ -286,6 +287,11 @@ GLOBAL - SWIPER PAGINATION
 ***********************************************
 GLOBAL - POPUP 
 ***********************************************
+*/
+/*
+html:has(body.popup_open) {
+  overflow-y: hidden;
+}
 */
 body.popup_open {
   overflow: hidden;
