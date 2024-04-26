@@ -1,6 +1,7 @@
 import Image from "next/image";
 import TextSimple from "@/app/ui/TextSimple";
 import Subtitle from "@/app/ui/Subtitle";
+import ItemFeature from "@/app/ui/ItemFeature";
 
 export default function AboutBlocFeature() {
   return (
@@ -16,10 +17,10 @@ export default function AboutBlocFeature() {
       </div>
       <div className="flex flex-col gap-2">
         <Subtitle>Every feature you&#39;ve ever wanted</Subtitle>
-        <ul>
-          <li>Create your wishlist</li>
-          <li>Add your favourites movies</li>
-          <li>Watch details of every movie</li>
+        <ul className="divide-y divide-white/[.15]">
+          <ItemFeature text="Create your wishlist" />
+          <ItemFeature text="Add your favourites movies" />
+          <ItemFeature text="Watch details of every movie" />
         </ul>
       </div>
     </div>

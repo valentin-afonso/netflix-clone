@@ -22,7 +22,9 @@ export default function SliderHome() {
       >
         <SwiperSlide>
           <Image
-            src="/img-blade-runner-1.webp"
+            src="/img-blade-runner-01.webp"
+            placeholder="blur"
+            blurDataURL="/img-blade-runner-01-low-quality.jpg"
             width={1920}
             height={1070}
             alt="cover"
@@ -31,7 +33,9 @@ export default function SliderHome() {
         </SwiperSlide>
         <SwiperSlide>
           <Image
-            src="/img-blade-runner-2.webp"
+            src="/img-blade-runner-02.webp"
+            placeholder="blur"
+            blurDataURL="/img-blade-runner-02-low-quality.jpg"
             width={1920}
             height={1070}
             alt="cover"
@@ -40,11 +44,13 @@ export default function SliderHome() {
         </SwiperSlide>
         <SwiperSlide>
           <Image
-            src="/img-blade-runner-3.webp"
+            src="/img-blade-runner-03.webp"
+            placeholder="blur"
+            blurDataURL="/img-blade-runner-03-low-quality.jpg"
             width={1920}
             height={1070}
             alt="cover"
-            className="w-full h-full object-cover object-bottom brightness-75"
+            className="w-full h-full object-cover object-bottom brightness-65"
           />
         </SwiperSlide>
       </Swiper>

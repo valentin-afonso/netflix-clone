@@ -76,7 +76,7 @@ export default async function PopupContent({ movieId, setSelectedId }: any) {
 
   let img_path = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
   if (movie.id === 1) {
-    img_path = "/img-blade-runner-1.webp";
+    img_path = "/img-blade-runner-01.webp";
   }
   const genres = movie.genres;
   const companies = movie.production_companies;
