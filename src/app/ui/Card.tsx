@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Rating from "@/app/ui/Rating";
-import { motion } from "framer-motion";
 import { useThemeContext } from "@/providers/popup-provider";
 
 const API_KEY = process.env.IMDB_KEY;
