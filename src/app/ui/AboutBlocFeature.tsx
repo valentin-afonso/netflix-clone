@@ -12,7 +12,7 @@ export default function AboutBlocFeature() {
           width={890}
           height={240}
           alt="image movies catalog"
-          className="brightness-50"
+          className="brightness-95"
         />
       </div>
       <div className="flex flex-col gap-2">

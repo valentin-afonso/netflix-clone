@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function AboutBlocInfo() {
   return (
-    <div className="flex justify-between max-w-[1280px] m-auto pt-12">
+    <div className="flex justify-between items-center max-w-[1280px] m-auto pt-12">
       <div className="flex flex-col gap-2 max-w-144">
         <Subtitle>All your movies in one app</Subtitle>
         <TextSimple>
@@ -29,7 +29,7 @@ export default function AboutBlocInfo() {
           width={890}
           height={240}
           alt="image movies catalog"
-          className="absolute right-0 brightness-50"
+          className="absolute right-0 brightness-90"
           placeholder="blur"
           blurDataURL="/gallery-movies-low-quality.webp"
         />

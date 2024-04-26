@@ -22,8 +22,8 @@ export default function AboutSlider() {
             <Title>About this app</Title>
             <p>All the best for movies addict</p>
           </div>
-          <div className="flex flex-col gap-1">
-            <p className="text-xs mt-3 mb-3 max-w-lg pr-4 sm:text-base">
+          <div className="flex flex-col">
+            <p className="text-xs mt-3 mb-1 max-w-lg pr-4 sm:text-base">
               For all movies lover
             </p>
             <ul className="flex gap-1">
