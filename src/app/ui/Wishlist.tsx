@@ -2,11 +2,12 @@
 
 import TitleSecond from "./TitleSecond";
 import WishlistMovies from "./WishlistMovies";
+import SkeletonSliderMovies from "@/app/ui/SkeletonSliderMovies";
 import { useThemeContext } from "@/providers/wishlist-provider";
 import { useState, useEffect } from "react";
 
 export default function Wishlist() {
-  const { moviesIdInWishlist } = useThemeContext();
+  const { refreshWishlist } = useThemeContext();
   const [movies, setMovies] = useState<any>(null);
 
   useEffect(() => {
@@ -22,24 +23,22 @@ export default function Wishlist() {
         if (movies) {
           setMovies(movies);
         }
-        console.log(movies);
       } catch (error) {
         console.log("Error during fetching wishlist: ", error);
       }
     };
 
     fetchData();
-  }, [moviesIdInWishlist]);
+  }, [refreshWishlist]);
 
   if (movies === null) {
-    return;
+    return <SkeletonSliderMovies />;
   }
-  if (movies) {
-    return (
-      <>
-        <TitleSecond>Wishlist</TitleSecond>
-        <WishlistMovies movies={movies.movie} />
-      </>
-    );
-  }
+
+  return (
+    <>
+      <TitleSecond>Wishlist</TitleSecond>
+      <WishlistMovies movies={movies.movie} />
+    </>
+  );
 }

@@ -3,13 +3,13 @@
 import { createContext, useContext, useState } from "react";
 
 interface ThemeContextType {
-  moviesIdInWishlist: any;
-  setMoviesIdInWishlist: React.Dispatch<React.SetStateAction<any>>;
+  refreshWishlist: any;
+  setRefreshWishlist: React.Dispatch<React.SetStateAction<any>>;
 }
 
 export const ThemeContext = createContext<ThemeContextType>({
-  moviesIdInWishlist: false,
-  setMoviesIdInWishlist: () => {},
+  refreshWishlist: false,
+  setRefreshWishlist: () => {},
 });
 
 export default function WishlistProvider({
@@ -17,12 +17,10 @@ export default function WishlistProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [moviesIdInWishlist, setMoviesIdInWishlist] = useState(false);
+  const [refreshWishlist, setRefreshWishlist] = useState(false);
 
   return (
-    <ThemeContext.Provider
-      value={{ moviesIdInWishlist, setMoviesIdInWishlist }}
-    >
+    <ThemeContext.Provider value={{ refreshWishlist, setRefreshWishlist }}>
       {children}
     </ThemeContext.Provider>
   );

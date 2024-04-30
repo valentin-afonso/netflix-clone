@@ -4,7 +4,7 @@ import CirclePlus from "@/app/ui/svg/CirclePlus";
 import { useThemeContext } from "@/providers/wishlist-provider";
 
 export default function ButtonWishlist({ movieId }: any) {
-  const { moviesIdInWishlist, setMoviesIdInWishlist } = useThemeContext();
+  const { refreshWishlist, setRefreshWishlist } = useThemeContext();
 
   const [isWishlist, setIsWishlist] = useState<any>(null);
 
@@ -41,7 +41,7 @@ export default function ButtonWishlist({ movieId }: any) {
         }),
       });
       if (res.ok) {
-        setMoviesIdInWishlist(!moviesIdInWishlist);
+        setRefreshWishlist(!refreshWishlist);
         toast.message("Add to your wishlist with success", {
           description: "titre du film",
         });
@@ -81,7 +81,7 @@ export default function ButtonWishlist({ movieId }: any) {
           }),
         });
         if (res.ok) {
-          setMoviesIdInWishlist(!moviesIdInWishlist);
+          setRefreshWishlist(!refreshWishlist);
           toast.message("Movie removed from your wishlist", {
             description: "titre du film",
           });
