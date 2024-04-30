@@ -1,5 +1,5 @@
 import SkeletonAuthPage from "@/app/ui/SkeletonAuthPage";
 
-export default function Loading() {
+export default function loading() {
   return <SkeletonAuthPage />;
 }
