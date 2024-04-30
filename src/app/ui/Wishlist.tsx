@@ -1,37 +1,45 @@
+"use client";
+
 import TitleSecond from "./TitleSecond";
 import WishlistMovies from "./WishlistMovies";
-import { authOptions } from "@/lib/auth";
-import { getServerSession } from "next-auth";
+import { useThemeContext } from "@/providers/wishlist-provider";
+import { useState, useEffect } from "react";
 
-export default async function Wishlist() {
-  try {
-    const session = await getServerSession(authOptions);
-    if (session && session.user) {
-      const email = session.user.email;
-      const resMoviesWishlist = await fetch(
-        "http://localhost:3000/api/wishlistMovies",
-        {
+export default function Wishlist() {
+  const { moviesIdInWishlist } = useThemeContext();
+  const [movies, setMovies] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const resMoviesWishlist = await fetch("api/wishlistMovies", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email }),
+        });
+        const movies = await resMoviesWishlist.json();
+        if (movies) {
+          setMovies(movies);
         }
-      );
-      const movies = await resMoviesWishlist.json();
-      if (movies) {
-        return (
-          <>
-            <TitleSecond>Wishlist</TitleSecond>
-            <WishlistMovies movies={movies.movie} />
-          </>
-        );
-      } else {
-        return <></>;
+        console.log(movies);
+      } catch (error) {
+        console.log("Error during fetching wishlist: ", error);
       }
-    }
-  } catch (error) {
-    // setLoading(false);
-    console.log("Error during fetching wishlist: ", error);
+    };
+
+    fetchData();
+  }, [moviesIdInWishlist]);
+
+  if (movies === null) {
+    return;
+  }
+  if (movies) {
+    return (
+      <>
+        <TitleSecond>Wishlist</TitleSecond>
+        <WishlistMovies movies={movies.movie} />
+      </>
+    );
   }
 }

@@ -1,8 +1,11 @@
 import { toast } from "sonner";
 import { useState, useEffect } from "react";
 import CirclePlus from "@/app/ui/svg/CirclePlus";
+import { useThemeContext } from "@/providers/wishlist-provider";
 
 export default function ButtonWishlist({ movieId }: any) {
+  const { moviesIdInWishlist, setMoviesIdInWishlist } = useThemeContext();
+
   const [isWishlist, setIsWishlist] = useState<any>(null);
 
   const handleWhishlist = async () => {
@@ -38,6 +41,7 @@ export default function ButtonWishlist({ movieId }: any) {
         }),
       });
       if (res.ok) {
+        setMoviesIdInWishlist(!moviesIdInWishlist);
         toast.message("Add to your wishlist with success", {
           description: "titre du film",
         });
@@ -77,6 +81,7 @@ export default function ButtonWishlist({ movieId }: any) {
           }),
         });
         if (res.ok) {
+          setMoviesIdInWishlist(!moviesIdInWishlist);
           toast.message("Movie removed from your wishlist", {
             description: "titre du film",
           });

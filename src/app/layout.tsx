@@ -8,6 +8,7 @@ import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import Provider from "./Provider";
 import PopupProvider from "@/providers/popup-provider";
+import WishlistProvider from "@/providers/wishlist-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +30,9 @@ export default async function RootLayout({
     >
       <body className={`${inter.className} h-full max-w-[100vw]`}>
         {session && <Header />}
-        <PopupProvider>{children}</PopupProvider>
+        <WishlistProvider>
+          <PopupProvider>{children}</PopupProvider>
+        </WishlistProvider>
         {session && <Footer />}
       </body>
     </html>
