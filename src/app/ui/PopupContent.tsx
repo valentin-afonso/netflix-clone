@@ -1,16 +1,15 @@
 import React from "react";
 import Image from "next/image";
 import Close from "@/app/ui/svg/Close";
-import CirclePlus from "@/app/ui/svg/CirclePlus";
+import ButtonWishlist from "@/app/ui/ButtonWishlist";
 import Rating from "@/app/ui/Rating";
 import ResleasedTag from "@/app/ui/ResleasedTag";
-import { toast } from "sonner";
+import { Suspense } from "react";
 
 async function getMovie(movieId: any) {
   let res = await fetch(`/api/movie?id=${movieId}`);
   return res.json();
 }
-
 function getDefaultMovie() {
   const result = {
     id: 1,
@@ -74,71 +73,16 @@ export default async function PopupContent({ movieId, setSelectedId }: any) {
     movie = data.data;
   }
 
-  let img_path = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
-  if (movie.id === 1) {
+  let img_path = `https://image.tmdb.org/t/p/w500${movie?.backdrop_path}`;
+  if (movie?.id === 1) {
     img_path = "/img-blade-runner-01.webp";
   }
-  const genres = movie.genres;
-  const companies = movie.production_companies;
+  const genres = movie?.genres;
+  const companies = movie?.production_companies;
 
   const handleClosePopup = () => {
     document.querySelector("body")?.classList.remove("popup_open");
     setSelectedId(null);
-  };
-  const handleWhishlist = async () => {
-    try {
-      if (!movieId) {
-        // setLoading(false);
-        return;
-      }
-      const resMovieExists = await fetch("api/existInWishlist", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ movieId }),
-      });
-
-      const { movie } = await resMovieExists.json();
-
-      if (movie) {
-        console.log("Movie already exists in wishlist");
-        // setLoading(false);
-        return;
-      }
-
-      const res = await fetch("api/addToWishlist", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          movieId,
-        }),
-      });
-      if (res.ok) {
-        toast.message("Add to your wishlist with success", {
-          description: "titre du film",
-        });
-      } else {
-        // setLoading(false);
-        console.log("adding to wishlist failed.");
-      }
-    } catch (error) {
-      // setLoading(false);
-      console.log("Error during adding to wishlist: ", error);
-    }
-
-    /*
-    toast.custom((t) => (
-      <div className="bg-slate-200 w-[350px] border-solid border-slate-800 rounded-lg">
-        <h1>Custom toast</h1>
-        <button onClick={() => toast.dismiss(t)}>
-          <Close />
-        </button>
-      </div>
-    ));
-    */
   };
 
   return (
@@ -160,12 +104,9 @@ export default async function PopupContent({ movieId, setSelectedId }: any) {
         <p className="absolute w-full bottom-4 sm:bottom-1 left-0 pl-4 sm:pl-12 text-base sm:text-xl max-w-[90vw] sm:max-w-full">
           {movie?.title}
         </p>
-        <div
-          className="absolute bottom-4 right-4 cursor-pointer sm:right-12"
-          onClick={() => handleWhishlist()}
-        >
-          <CirclePlus />
-        </div>
+        <Suspense fallback={<p className="fixed">loading...</p>}>
+          <ButtonWishlist movieId={movieId} />
+        </Suspense>
       </div>
       <div className="relative flex flex-col justify-between gap-4 bg-dark-light p-7 sm:p-12 sm:flex-row sm:gap-0">
         <div className="flex flex-col">
