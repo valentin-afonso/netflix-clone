@@ -5,7 +5,7 @@ import ItemFeature from "@/app/ui/ItemFeature";
 
 export default function AboutBlocFeature() {
   return (
-    <div className="flex justify-between max-w-[1280px] m-auto pt-48">
+    <div className="flex justify-between max-w-[1280px] m-auto pt-12 items-center">
       <div>
         <Image
           src="/mockup-mobile.webp"

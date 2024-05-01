@@ -40,7 +40,9 @@ button {
 .btn-primary {
   border: 1px solid #2b2b2b;
 }
-
+.ignore-margin-right {
+  right: calc(((100vw - 100%) / 2) * (-1));
+}
 /*
 ***********************************************
 GLOBAL - SWIPER 
