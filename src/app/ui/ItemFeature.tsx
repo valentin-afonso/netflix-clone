@@ -4,7 +4,7 @@ export default function ItemFeature({ text }: any) {
   return (
     <li className="flex gap-2 py-5 px-2">
       <Feature />
-      <p className="text-lg opacity-65">{text}</p>
+      <p className="sm:text-lg text-sm opacity-65">{text}</p>
     </li>
   );
 }

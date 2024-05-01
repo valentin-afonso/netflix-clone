@@ -17,7 +17,7 @@ export default function AboutSlider() {
         />
       </figure>
       <div className="relative w-full max-w-[1280px] m-auto">
-        <div className="absolute flex flex-col gap-8 bottom-24 left-0 z-2">
+        <div className="absolute flex flex-col gap-2 sm:gap-8 bottom-0 sm:bottom-24 z-2 left-2 sm:left-0">
           <div className="flex flex-col gap-1">
             <Title>About this app</Title>
             <p>All the best for movies addict</p>

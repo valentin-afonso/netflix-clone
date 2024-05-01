@@ -2,7 +2,7 @@ import TextSimple from "@/app/ui/TextSimple";
 
 export default function AboutBlocBottom() {
   return (
-    <div className="max-w-[1280px] m-auto pt-12 text-center text-xs">
+    <div className="max-w-[1280px] m-auto pt-12 text-center text-xs px-2 sm:px-0">
       <TextSimple>
         <strong className="inline-block pb-1">
           Thank you for your visit !
