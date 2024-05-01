@@ -9,6 +9,8 @@ import { getServerSession } from "next-auth";
 import Provider from "./Provider";
 import PopupProvider from "@/providers/popup-provider";
 import WishlistProvider from "@/providers/wishlist-provider";
+import SidebarProvider from "@/providers/sidebar-provider";
+import SideBar from "@/app/ui/SideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +31,10 @@ export default async function RootLayout({
       className="h-auto bg-dark w-screen overflow-x-hidden text-white"
     >
       <body className={`${inter.className} h-full max-w-[100vw]`}>
-        {session && <Header />}
+        <SidebarProvider>
+          {session && <Header />}
+          {session && <SideBar />}
+        </SidebarProvider>
         <WishlistProvider>
           <PopupProvider>{children}</PopupProvider>
         </WishlistProvider>
