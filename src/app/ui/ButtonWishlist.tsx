@@ -1,6 +1,7 @@
 import { toast } from "sonner";
 import { useState, useEffect } from "react";
 import CirclePlus from "@/app/ui/svg/CirclePlus";
+import CircleX from "@/app/ui/svg/CircleX";
 import { useThemeContext } from "@/providers/wishlist-provider";
 
 export default function ButtonWishlist({ movieId }: any) {
@@ -130,7 +131,7 @@ export default function ButtonWishlist({ movieId }: any) {
         className="absolute bottom-4 right-4 cursor-pointer sm:right-12"
         onClick={() => removeFromWishList()}
       >
-        remove
+        <CircleX />
       </button>
     );
   }
