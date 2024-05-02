@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Title from "@/app/ui/Title";
 import TextSimple from "@/app/ui/TextSimple";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Netfilx App - My favourites",
+  description: "Netflix app, watch your favourites movies here !",
+};
 
 export default function Page() {
   return (

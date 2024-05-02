@@ -6,7 +6,6 @@ import Footer from "@/app/ui/footer/Footer";
 
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
-import Provider from "./Provider";
 import PopupProvider from "@/providers/popup-provider";
 import WishlistProvider from "@/providers/wishlist-provider";
 import SidebarProvider from "@/providers/sidebar-provider";
@@ -17,6 +16,27 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Netfilx App",
   description: "Netflix app build with Next",
+  openGraph: {
+    title: "Welcome on my netflix app !",
+    description:
+      "An app made to find all your favorite films thanks to the Imdb API.",
+    type: "article",
+    url: "https://cruip-tutorials-next.vercel.app/social-preview",
+    images: [
+      {
+        url: "/img-blade-runner-01-low-quality.jpg Dynamic Open Graph and Twitter Images in Next.js",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Welcome on my netflix app !",
+    description:
+      "An app made to find all your favorite films thanks to the Imdb API.",
+    images: [
+      "/img-blade-runner-01-low-quality.jpg Dynamic Open Graph and Twitter Images in Next.js",
+    ],
+  },
 };
 
 export default async function RootLayout({

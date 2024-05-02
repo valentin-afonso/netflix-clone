@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Title from "@/app/ui/Title";
 import WishlistIntern from "@/app/ui/WishlistIntern";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Netfilx App - My wishlist",
+  description: "Netflix app, watch your wishlist movies here !",
+};
 
 export default function Page() {
   return (
