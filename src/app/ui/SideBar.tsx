@@ -1,6 +1,6 @@
 "use client";
 
-import NavLinks from "@/app/ui/header/NavLinks";
+import NavLinksSidebar from "@/app/ui/header/NavLinksSidebar";
 import { useThemeContext } from "@/providers/sidebar-provider";
 
 export default function SideBar() {
@@ -15,18 +15,18 @@ export default function SideBar() {
       }`}
     >
       <nav>
-        <ul className="flex flex-col gap-2">
+        <ul className="flex flex-col gap-1">
           <li>
-            <NavLinks name="Home" href="/" />
+            <NavLinksSidebar name="Home" href="/" />
           </li>
           <li>
-            <NavLinks name="Wishlist" href="/wishlist" />
+            <NavLinksSidebar name="Wishlist" href="/wishlist" />
           </li>
           <li>
-            <NavLinks name="Favourites" href="/favourites" />
+            <NavLinksSidebar name="Favourites" href="/favourites" />
           </li>
           <li>
-            <NavLinks name="About" href="/about" />
+            <NavLinksSidebar name="About" href="/about" />
           </li>
         </ul>
       </nav>

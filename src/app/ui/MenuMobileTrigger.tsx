@@ -11,7 +11,6 @@ export default function MenuMobileTrigger() {
   const handleMenuMobile = (e: any) => {
     setClicked(!clicked);
     setIsOpenSidebar(!clicked);
-    console.log(isOpenSidebar);
   };
   return (
     <>
