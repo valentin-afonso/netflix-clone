@@ -1,12 +1,12 @@
 "use client";
 
 import TitleSecond from "./TitleSecond";
-import WishlistMovies from "./WishlistMovies";
-import SkeletonSliderMovies from "@/app/ui/SkeletonSliderMovies";
+import WishlistMoviesIntern from "./WishlistMoviesIntern";
+import SkeletonMoviesIntern from "@/app/ui/SkeletonMoviesIntern";
 import { useThemeContext } from "@/providers/wishlist-provider";
 import { useState, useEffect } from "react";
 
-export default function Wishlist() {
+export default function WishlistIntern() {
   const { refreshWishlist } = useThemeContext();
   const [movies, setMovies] = useState<any>(null);
 
@@ -35,7 +35,7 @@ export default function Wishlist() {
     return (
       <>
         <TitleSecond>Wishlist</TitleSecond>
-        <SkeletonSliderMovies />
+        <SkeletonMoviesIntern />
       </>
     );
   }
@@ -43,7 +43,7 @@ export default function Wishlist() {
   return (
     <>
       <TitleSecond>Wishlist</TitleSecond>
-      <WishlistMovies movies={movies.movie} />
+      <WishlistMoviesIntern movies={movies.movie} />
     </>
   );
 }
