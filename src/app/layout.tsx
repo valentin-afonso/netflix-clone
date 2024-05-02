@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     description:
       "An app made to find all your favorite films thanks to the Imdb API.",
     type: "article",
-    url: "https://cruip-tutorials-next.vercel.app/social-preview",
+    url: "https://netflix-clone-chi-wheat.vercel.app/",
     images: [
       {
-        url: "/img-blade-runner-01-low-quality.jpg Dynamic Open Graph and Twitter Images in Next.js",
+        url: "/img-blade-runner-01-low-quality.jpg",
       },
     ],
   },
@@ -33,9 +33,7 @@ export const metadata: Metadata = {
     title: "Welcome on my netflix app !",
     description:
       "An app made to find all your favorite films thanks to the Imdb API.",
-    images: [
-      "/img-blade-runner-01-low-quality.jpg Dynamic Open Graph and Twitter Images in Next.js",
-    ],
+    images: ["/img-blade-runner-01-low-quality.jpg"],
   },
 };
 
