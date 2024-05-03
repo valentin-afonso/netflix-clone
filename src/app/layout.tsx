@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: "https://netflix-clone-chi-wheat.vercel.app/",
     images: [
       {
-        url: "/img-blade-runner-01-low-quality.jpg",
+        url: "/thumbnail-twitter.jpg",
       },
     ],
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     creator: "@valentinafso",
     images: [
       {
-        url: "/img-blade-runner-01-low-quality.jpg",
+        url: "/thumbnail-twitter.jpg",
         width: 1200,
         height: 630,
         alt: "cover netflix app",
