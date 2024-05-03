@@ -33,7 +33,15 @@ export const metadata: Metadata = {
     title: "Welcome on my netflix app !",
     description:
       "An app made to find all your favorite films thanks to the Imdb API.",
-    images: ["/img-blade-runner-01-low-quality.jpg"],
+    creator: "@valentinafso",
+    images: [
+      {
+        url: "/img-blade-runner-01-low-quality.jpg",
+        width: 1200,
+        height: 630,
+        alt: "cover netflix app",
+      },
+    ],
   },
 };
 
