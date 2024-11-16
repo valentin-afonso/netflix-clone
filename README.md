@@ -38,6 +38,6 @@ features | lib
 
   </br>
 
-### Link to the blog :  
+### Link to the app :  
 
 :point_right: [mymovies](https://mymovies-afso.vercel.app/)
