@@ -15,7 +15,6 @@ import PopupManagement from "@/app/ui/PopupManagement";
 
 export default async function Home() {
   // const session = await getAuthSession();
-
   const session = await getServerSession(authOptions);
   if (!session) {
     redirect("/login");

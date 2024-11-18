@@ -1,3 +1,7 @@
 export default function Loading() {
-  return <div>loading home page</div>;
+  return (
+    <div className="w-full h-screen flex items-center justify-center">
+      <div className="spinner"></div>
+    </div>
+  );
 }

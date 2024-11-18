@@ -14,32 +14,32 @@ import SideBar from "@/app/ui/SideBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Netfilx App",
-  description: "Netflix app build with Next",
+  title: "Mymovies App",
+  description: "Mymovies app build with Next",
   openGraph: {
-    title: "Welcome on my netflix app !",
+    title: "Welcome on my Mymovies app !",
     description:
       "An app made to find all your favorite films thanks to the Imdb API.",
     type: "article",
-    url: "https://netflix-clone-chi-wheat.vercel.app/",
+    url: "https://mymovies-afso.vercel.app/",
     images: [
       {
-        url: "https://netflix-clone-chi-wheat.vercel.app/twitter-image.jpg",
+        url: "https://mymovies-afso.vercel.app/twitter-image.jpg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Welcome on my netflix app !",
+    title: "Welcome on my Mymovies app !",
     description:
       "An app made to find all your favorite films thanks to the Imdb API.",
     creator: "@valentinafso",
     images: [
       {
-        url: "https://netflix-clone-chi-wheat.vercel.app/twitter-image.jpg",
+        url: "https://mymovies-afso.vercel.app/twitter-image.jpg",
         width: 1200,
         height: 630,
-        alt: "cover netflix app",
+        alt: "cover Mymovies app",
       },
     ],
   },
