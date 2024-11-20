@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Title from "@/app/ui/Title";
 import TextSimple from "@/app/ui/TextSimple";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,7 +11,11 @@ export const metadata: Metadata = {
   description: "Netflix app, watch your favourites movies here !",
 };
 
-export default function Page() {
+export default async function Page() {
+  const session = await getServerSession(authOptions);
+  if (!session) {
+    redirect("/login");
+  }
   return (
     <>
       <div className="relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-2/6 before:bg-gradient-to-t before:from-dark before:to-transparent before:z-2">

@@ -4,7 +4,7 @@ import Card from "./Card";
 async function getWishlistMovies({ movies }: any) {
   const promises = movies.map(async (movie: any) => {
     const { movieID } = movie;
-    const res = await fetch(`/api/movie?id=${movieID}`);
+    const res = await fetch(`http://localhost:3000/api/movie?id=${movieID}`);
     const data = await res.json();
     return data.data;
   });

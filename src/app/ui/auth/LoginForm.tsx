@@ -37,7 +37,7 @@ export default function LoginForm() {
         return;
       }
 
-      router.push("/");
+      router.push("/browser");
     } catch (error) {
       setLoading(false);
       console.log(error);

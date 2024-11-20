@@ -5,7 +5,7 @@ export const LogoutButton = () => {
   return (
     <button
       onClick={async () => {
-        await signOut();
+        await signOut({ callbackUrl: "/login" });
       }}
       className="btn mt-4"
     >
