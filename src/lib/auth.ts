@@ -17,7 +17,6 @@ if (!githubId || !githubSecret) {
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   session: { strategy: "jwt" },
-  debug: true,
   jwt: {
     secret: process.env.NEXTAUTH_SECRET,
   },
@@ -98,9 +97,6 @@ export const authOptions: NextAuthOptions = {
         },
       };
       return session;
-    },
-    async redirect({ url, baseUrl }) {
-      return url.startsWith(baseUrl) ? url : baseUrl;
     },
   },
 };
